@@ -1,0 +1,1422 @@
+%%
+%% Copyright 2007-2020 Elsevier Ltd
+%%
+%% This file is part of the 'Elsarticle Bundle'.
+%% ---------------------------------------------
+%%
+%% It may be distributed under the conditions of the LaTeX Project Public
+%% License, either version 1.2 of this license or (at your option) any
+%% later version.  The latest version of this license is in
+%%    http://www.latex-project.org/lppl.txt
+%% and version 1.2 or later is part of all distributions of LaTeX
+%% version 1999/12/01 or later.
+%%
+%% The list of all files belonging to the 'Elsarticle Bundle' is
+%% given in the file `manifest.txt'.
+%%
+%% Template article for Elsevier's document class `elsarticle'
+%% with harvard style bibliographic references
+
+\documentclass[preprint,12pt,authoryear,a4paper]{elsarticle}
+%\documentclass[a4paper]{ctexart}
+\usepackage{pdfpages}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{makecell}
+\usepackage{booktabs} % 导入三线表需要的宏包
+\usepackage{longtable}% 导入跨页表格所需宏包
+\usepackage{palatino}
+\usepackage{tikz}
+\usetikzlibrary{shapes.geometric, arrows}
+\usetikzlibrary{arrows,shapes,chains}
+\usepackage[paperwidth=600pt,paperheight=853pt,top=70pt,right=30pt,bottom=72pt,left=30pt]{geometry}
+
+%% Use the option review to obtain double line spacing
+%% \documentclass[authoryear,preprint,review,12pt]{elsarticle}
+
+%% Use the options 1p,twocolumn; 3p; 3p,twocolumn; 5p; or 5p,twocolumn
+%% for a journal layout:
+%% \documentclass[final,1p,times,authoryear]{elsarticle}
+%% \documentclass[final,1p,times,twocolumn,authoryear]{elsarticle}
+%% \documentclass[final,3p,times,authoryear]{elsarticle}
+%% \documentclass[final,3p,times,twocolumn,authoryear]{elsarticle}
+%% \documentclass[final,5p,times,authoryear]{elsarticle}
+%% \documentclass[final,5p,times,twocolumn,authoryear]{elsarticle}
+
+%% For including figures, graphicx.sty has been loaded in
+%% elsarticle.cls. If you prefer to use the old commands
+%% please give \usepackage{epsfig}
+
+%% The amssymb package provides various useful mathematical symbols
+%%\usepackage{amssymb}
+%% The amsthm package provides extended theorem environments
+%% \usepackage{amsthm}
+
+%% The lineno packages adds line numbers. Start line numbering with
+%% \begin{linenumbers}, end it with \end{linenumbers}. Or switch it on
+%% for the whole article with \linenumbers.
+%% \usepackage{lineno}
+
+\journal{Egyptian Informatics Journal}
+
+\begin{document}
+
+\begin{frontmatter}
+
+%% Title, authors and addresses
+
+%% use the tnoteref command within \title for footnotes;
+%% use the tnotetext command for theassociated footnote;
+%% use the fnref command within \author or \affiliation for footnotes;
+%% use the fntext command for theassociated footnote;
+%% use the corref command within \author for corresponding author footnotes;
+%% use the cortext command for theassociated footnote;
+%% use the ead command for the email address,
+%% and the form \ead[url] for the home page:
+%% \title{Title\tnoteref{label1}}
+%% \tnotetext[label1]{}
+%% \author{Name\corref{cor1}\fnref{label2}}
+%% \ead{email address}
+%% \ead[url]{home page}
+%% \fntext[label2]{}
+%% \cortext[cor1]{}
+%% \affiliation{organization={},
+%%            addressline={},
+%%            city={},
+%%            postcode={},
+%%            state={},
+%%            country={}}
+%% \fntext[label3]{}
+
+\title{Grey Wolf optimization algorithm with random local optimal regulation and first-element dominance}
+
+%%% use optional labels to link authors explicitly to addresses:
+% \author{Xuan Yanzhuang}
+% \ead{xuanyanzhuang@gxmzu.edu.cn}
+% %\fnref{Corresponding author: E-mail address: xuanyanzhuang@gxmzu.edu.cn (Xuan Yanzhuang)}
+% \author{Xuan Shibin\corref{*}}
+% \cortext[*]{Corresponding author: Xuan Shibin}
+% \ead{xuanshibin@gxmzu.edu.cn}
+% \affiliation{organization={School of Artificial Intelligence, Guangxi Minzu University},
+% organization={Guangxi Key Laboratory of Hybrid Computation and IC Design Analysis},
+%             addressline={Daxue east road 188},
+%             city={Naning},
+%             postcode={530006},
+%             state={Guangxi},
+%             country={China}}
+
+
+ %\affiliation[label2]{organization={Guangxi Minzu University,School of Artificial Intelligence},
+%             addressline={Daxue east road 188},
+%             city={Naning},
+%             postcode={530006},
+%             state={Guangxi},
+%             country={China}}
+
+%\author{}
+%
+%\affiliation{organization={},%Department and Organization
+%            addressline={},
+%            city={},
+%            postcode={},
+%            state={},
+%            country={}}
+
+\begin{abstract}
+%% Text of abstract
+Due to the classical Grey Wolf algorithm GWO does not consider the characteristics of the local information of individual in population, a novel local random optimization strategy is proposed to make up for the defect of GWO. In this method, several points in the neighborhood of the current location of each individual are selected at random in the axial direction as candidates, and the best points are selected to participate in the renewal decision of the individual. Furthermore, in our experiments, a special first-element dominance characteristic is found and can greatly improve the combination effect of global and local information. In order to ensure that all constraints are not violated in the process of constraint optimization in industrial design, the random mixed population initialization method is proposed to generate population individuals that meet the constraint requirements and contain boundary values randomly. In addition, a treatment method of shrinking in a specific direction is proposed for dealing with individuals who cross the boundary. Experimental results on several test function sets show that compared with recent improved algorithms for GWO, the proposed algorithm has obvious advantages in fitness value, convergence speed and stability .
+
+\end{abstract}
+
+%%%Graphical abstract
+%\begin{graphicalabstract}
+%%\includegraphics{grabs}
+%\end{graphicalabstract}
+
+%%Research highlights
+%\begin{highlights}
+%\item
+%Proposing a random local direction optimal search strategy.
+%\item
+%Discover an advantage of the first element in combining global and local solutions.
+%\item
+%Proposing a new random mixed initial population method for constrained optimization.
+%\item
+%Proposing the transboundary treatment method of contraction along the direction.
+%\end{highlights}
+
+\begin{keyword}
+intelligence algorithm \sep grey Wolf algorithm \sep first-element dominance \sep Random Local Optimization \sep Random mixed population.
+%% keywords here, in the form: keyword \sep keyword
+
+%% PACS codes here, in the form: \PACS code \sep code
+
+%% MSC codes here, in the form: \MSC code \sep code
+%% or \MSC[2008] code \sep code (2000 is the default)
+
+\end{keyword}
+
+\end{frontmatter}
+
+%% \linenumbers
+
+%% main text
+\section{Introduction}
+\label{1}
+A large number of optimization problems have emerged in scientific research and engineering applications, and these problems often have high dimensionality. If the problem to be solved is non-convex, the traditional optimization algorithm is often prone to falling into the local optimal solution, and it is difficult to obtain the global optimal solution. Bio-inspired optimization algorithm provides a feasible path to solve practical optimization problem. It is widely used in mechanical engineering [1,2], electronic engineering [3], computer vision [4,5], architectural design [6], biological information [7], agriculture [8], financial markets [9] and so on. Due to the wide range of applications of Bio-inspired optimization algorithm, a large number of algorithms have gushed out, including: (1) Evolutionary algorithm, inspired from Darwinian Theory of Evolution, simulate evolution rules in nature, of which genetic algorithm (GA) [10] and differential evolution (DE) [11] are typical representatives of such algorithms. (2) Swarm intelligence optimization method, which is mainly inspired by the social behavior of the populations in the fauna, and shares the information of all individuals in the optimization process. They include: Particle Swarm Optimization (PSO) [12], Firefly Algorithm (FA) [13], Grey Wolf Optimizer (GWO) [14], Ant Colony Optimization Algorithm (ACO) [15], Artificial Bee Colony Algorithm (ABC) [16,17], Whale Optimization Algorithm (WOA) [18], and Marine Predator Algorithm (MPA) [19], Cuckoo Search Algorithm[20], Honey Badger Algorithm[21], Orca Predation Algorithm[22], Gazelle Optimization Algorithm[23], Salp Search Algorithm[24] and so on. (3) Based on human behavior optimization methods, inspired by human interaction phenomena or a human society behavior. Examples include the Teaching and Learning Optimization Algorithm (TLBO) [25], the Empire Competition Algorithm (ICA) [26], as well as the Volleyball Super League Algorithm (VPL) [27] and the Cultural Evolution Algorithm (CEA) [28],slime mould algorithm(SMA)[29].
+
+Among many bio-inspired optimization algorithms, swarm intelligent optimization algorithm is the most favored by researchers and occupies the highest proportion in optimization algorithms. Swarm intelligence algorithms pay attention to the sociality of groups and the information sharing among individuals. The differences of various swarm intelligence algorithms are mainly reflected in the different ways of information sharing, and each has its own scope of application. Among them, Grey Wolf Optimization Algorithm (GWO) has been reported for its simplicity and efficiency. Sen Zhang [30] integrated Powell local optimization method into GWO and proposed PGWO algorithm. The algorithm first used GWO to generate a new position of each individual and then used Powell local optimization method to adjust the position of each individual. Assen Beshr Alyu [31] embedded particle swarm optimization (PSO) into GWO, proposed hybrid Grey Wolf optimizer and particle swarm optimization algorithm (PSO-GWO), and applied them to determine the optimal location and scale of distributed generation (DG) in passive distribution systems, while considering multi-objective functions. Tt includes minimizing of active and reactive power losses, and enhaning voltage distribution. In this method, the three individual revisions obtained from GWO are used to correct the individual positions in PSO. Chao Lu et al. [32] used chaos to optimize two important decay control parameters in GWO. M.H. Nadimi-Shahraki et al. [33] proposed the I-GWO algorithm. Based on classical GWO, the Euclidean distance between the current position and the new position calculated by GWO algorithm was used as the radius to construct the individual neighborhood. The classical GWO results were modified by using the difference between the randomly selected populations within and outside the neighborhood. Yilin Su et al. [34] used various strategies to optimize GWO. Firstly, the initial population of GWO was initialized by using the combination model of logistic and Lotka-Volterra to improve the difference of the initial population. Then, the population renewal factor was adjusted by nonlinear function to improve the search efficiency. Kewen Li et al. [35] designed the Cauchy-Gauss mutation operator, which was applied to the alpha wolf. When the leading wolf tends to the local optimal solution, the search range can be expanded, and the operator can effectively improve the local development ability of the leading wolf and avoid falling into the local optimal solution. A greedy selection mechanism is proposed, to avoid high population diversity caused by variation. Greedy selection mechanism can maintain the diversity of the population and ensure the convergence speed of the algorithm. An improved search strategy is designed for all grey wolf individuals, which takes into account the average position of all individuals, effectively expands the search space, and improves the global search ability of the algorithm. Ashish Kumar Tripathi et al. [36] proposed the Enhanced Grey Wolf Optimizer (EGWO), which hybridized the hunting strategy of grey wolves with binomial crossing and introduced arbitrary flying steps to enhance the hunting ability of grey wolves. Nikhil Paliwal et al. [37] applied evolutionary intelligence-based the Grey Wolf Optimizer (GWO) to estimate the optimal parameters of proportional-integral-derivative (PID), and multi-source single-area Load Frequency Control (LFC) controller. The multi-source single-area power network considered in this paper consists of reheat turbine thermal power plant, gas power plant and hydraulic power plant with mechanical hydraulic governor. Furthermore, GWO is used to optimize the PID controller parameters of the LFC system under study. The algorithm takes into account four important performance indicators, namely, time-weighted square error integral (ITSE), time-weighted absolute error integral (ITAE), square-error integral (ISE) and absolute error integral (IAE). Finally, the results of the proposed method are compared with those of genetic algorithm (GA) under 1\%, 2\% and 5\% load perturbations. And the effectiveness and applicability of the proposed method in multi-source single-area network LFC are verified. In order to improve the performance of the basic Grey Wolf Optimization algorithm, Yinqiu Song et al. [38] introduced contraction, elastic surrounding and weighted candidate mechanisms to make up for the defects of local stagnation and premature convergence of the proposed elastic Grey Wolf Optimization algorithm. Jingkai Cui et al. [39] proposed a team-based Grey Wolf Optimizer (TLGWO), which consists of two strategies. The neighbor learning strategy introduces the influence of neighbors and improves the local search ability, while the random learning strategy provides a new search direction and enhances the global search ability. The Sine-Cosine Algorithm (SCA) proposed by Shubham Gupta et al. [40] is a new member in the field of meta-heuristics, which uses the behavior of sine and cosine functions to find solutions to optimization problems. However,In some cases SCA skips the real solution and falls into a suboptimal one. The problems lead to premature convergence, which is not conducive to the determination of global optimal solutions. Therefore, in order to alleviate the above problems, it establishes a relatively good cooperative relationship between regional development and development. Firstly, the exploration capability of SCA is improved by integrating social and cognitive components; Secondly, the balance between exploration and exploitation is maintained through the Grey Wolf Optimizer (GWO). This algorithm is named SC-GWO. Chengsheng Pan et al. [41] reanalyzed the hunting behavior of wolves and observed that the communication between leaders and $\omega$ wolves was very frequent during the hunt. This process is called judging prey. Based on this, an improved optimization algorithm called Decision Grey Wolf Optimization algorithm (DGWO) is proposed. Unlike the original GWO, DGWO consists of four steps instead of three: finding the prey, judging the prey, surrounding the prey, and attacking the prey. Bingkun Wang et al. [42] proposed a variant of GWO, called the Cross-Dimensional Coordinated Grey Wolf Optimizer (CDCGWO). It utilizes a novel learning technique to update the best solution (prey location) using all the previous best knowledge obtained from the frank solution. This method preserves the diversity of wolves and prevents premature convergence of multimodal optimization tasks. In addition, CDCGWO provides a unique constraint management method for realistic constrained engineering optimization problems. CDCGWO is used for evaluation in multiple engineering domains ( industrial chemical production, power systems, process design and synthesis, mechanical design, power electronics and livestock feed distribution) and performance on multiple test problems (15 widely used multimodal numerical test functions, 10 complex IEEE CEC06-2019 clothing tests, randomly generated landscapes, and 12 constrained reality optimization problems). The ENGWO algorithm proposed by Gyanaranjan Shial et al. [43] introduces a differential perturbation operator into the grey Wolf optimization algorithm,and randomly selects three Omega wolves to help the three leading wolves of the original algorithm achieve diversification of solution quality among feasible Omega wolves. In addition, when updating the position of individual omega wolves, similar values are used for the control parameters (A and C) of each leader Wolf's GWO. To ensure this diversity among omega wolves, an exploration element is introduced during the development phase, further improving the optimization capabilities of the GWO algorithm. The LMWOAGWO algorithm proposed by Qian Yang et al. [44] integrates WOA algorithm into GWO, adopts pseudo-inverse strategy to randomly initialize the population, introduces chaotic strategy to optimize the individual position update mechanism, and adopts Lévy flight technology to improve the global search capability of the algorithm.Recently,Kai Zhouet et al.[45] proposed an adaptive gray wolf fast optimization algorithm (SS-GWO), which adaptively selects the global search or local search according to the degree of agglomeration of individuals. Oluwatayomi Rereloluwa Adegboye et al.[46] proposed a algorithm called CMWGWO,it incorporates innovative approaches such as Chaotic Opposition Learning (COL), Mirror Reflection Strategy (MRS), and Worst Individual Disturbance (WID) into GWO.
+
+
+
+	According to the current research on GWO, the main focus is using local information to fine-tune GWO algorithm results or adjust the interactions between individuals in a population. From the reported literature, it can be seen that these improvements can optimize the performance of the original GWO algorithm. It is known that the determining factors for each individual moving from the current position to the next position are the direction of movement and the distance of movement. At present, most swarm intelligence algorithms adopt the strategy of gradually decreasing the moving distance with the number of iterative steps. That is, the moving distance is a decreasing function of the number of iterative steps. It is generally set before the population evolution and is not affected by the current situation of the population. Even if there is interference, the moving distance in the current iteration step is randomly fine-tuned based on the current population state. However, the direction of movement is constantly adjusted as the population evolves, sometimes by a large margin. In classical GWO, the movement direction of each individual is mainly determined by the position of the three individuals with the highest score, which reflects the global relationship of individuals in the population, while ignoring the local characteristics of individuals. Inspired by Powell local optimization, this paper proposes a new idea that global optimal and local optimal co-determine the movement direction of each individual, and proposes new strategies for population initialization and transboundary processing for real-world constrained optimization problems.
+
+	%The specific contributions of this paper are as follows:
+%
+%(1) A random local direction optimal search strategy is proposed to search local optimal solutions.
+%
+%(2) The first element advantage of the global optimal position is found, and the weighted combination with the local optimal solution is more conducive to the individual position updating in the population.
+%
+%(3) In the real world constrained optimization solution, a random mixed initial population generation method satisfying the constraints is proposed. The resulting population may contain boundary individuals.
+%
+%(4) In the real world constrained optimization solution, a new out-of-bounds strategy is proposed under the condition that the direction of individual update remains unchanged.
+
+The specific contributions of this paper and the differences of our work with these work are as follows:
+
+(1) Difference of the local searching strategy: the proposed algorithm randomly selects a small number of dimensions from all the coordinate dimensions of the current individual, and randomly selects a point in an interval distance r (gradually decrease with iterative process.) from the current individual location on the selected coordinate dimension as an alternative point, and selects the best point from all the alternative points as the local update value of the current individual. Its advantages are: the randomness of the search, the search range is gradually reduced with the number of iteration steps, and the calculation cost is reduced.
+
+(2) Difference of Individual renewal mechanism: The proposed algorithm combines the classical GWO calculation results with the proposed random local search results, and selects the best of the 6 combinations as the final update value of the current individual.
+
+(3) A combination mechanism called first-element dominance is found, that is, in the partially weighted combination in (2), the classical GWO calculation results participate in the combination with its first-element form. Experiments show that this method can greatly improve the performance of the algorithm.
+
+(4) To solve the constrained optimization problem, a random hybrid population generation method is proposed to ensure that the initial population satisfies the constraints and boundary conditions, and at the same time, some dimensions of some individuals are randomly selected at the boundary of the search domain.
+
+(5) To solve the constraint optimization problem, a new individual updating strategy is proposed to ensure that the individual can continue to meet the constraint and boundary requirements when the position is updated.
+
+
+\section{Relevant research basis}
+\label{2}
+In order to facilitate the subsequent expression and comparison, this section introduces the classical Grey Wolf algorithm.
+% and Powell's local search strategy.
+
+%\begin{figure}[htpb]
+%\scriptsize
+%%\thispagestyle{empty}
+%% 流程图定义基本形状
+%\tikzstyle{toplayer} = [regular polygon,regular polygon sides=3,minimum size=1.8cm,text centered, draw=black]
+%\tikzstyle{midlayer} = [trapezium, trapezium left angle=60, trapezium right angle=60, minimum width=0.8cm, minimum height=1.5cm, text centered, draw=black]
+%
+%\centerline{
+%\begin{tikzpicture}[node distance=1cm]
+%%定义流程图具体形状
+%\node[toplayer](l0) {$\alpha$};
+%\node[midlayer, below of = l0, yshift = -0.4cm](l1){$\ \beta\ $};
+%\node[midlayer, below of = l1, yshift = -0.7cm](l2){$\quad\delta\quad $};
+%\node[midlayer, below of = l2, yshift = -0.7cm](l3){$\quad\ \omega\quad\ $};
+%\end{tikzpicture}
+%}
+%\caption{Grey Wolf group}\label{fig:1}
+%\end{figure}
+
+%\subsection{Grey Wolf optimization algorithm}
+%\label{2.1}
+%Grey Wolf is a top carnivore, that sits at the top of the food chain. their lifestyle is mostly in groups, usually with 5 to 12 wolves per group.The Grey Wolf population is composed in the form of hierarchical pyramid with strict hierarchical management, as shown in Figure 1. The first
+%layer of the pyramid is the first wolf in the group called $\alpha{}$, which is
+%the most managerial individual in the wolf pack and is mainly responsible for the
+%decision-making affairs of the group, including predation action, rest time and
+%place, food distribution,etc. The second layer of the pyramid, called as
+% $\beta{}$, is the brain of $\alpha{}$ that assists $\alpha{}$ in making
+%management decisions and assists in processing the behavior of the group
+%organization. When $\alpha{}$ becomes vacant, $\beta{}$ takes the place of
+%$\alpha{}$. $\beta{}$ has dominance over other members of the pack other than
+%$\alpha{}$, but also plays a role in coordinating feedback.For example, $\beta{}$ communicates the
+%$\alpha{}$ wolf's commands to other members of the group, and reports the
+%execution back to the $\alpha{}$ wolf. The third layer of the pyramid is
+%$\delta{}$, which follow the instructions of $\alpha{}$ and $\beta{}$. It
+%can command other bottom individuals, mainly responsible for reconnaissance,
+%lookout, hunting, and care. The older $\alpha{}$ and $\beta{}$ will decline to
+%$\delta{}$ levels. The bottom of the pyramid, called $\omega{}$, is responsible
+%for balancing the relationships among the population and taking care of the pups.
+%The population rank of the grey wolf plays a crucial role in killing its prey effectively. The hunt is led by $\alpha{}$. The wolves first search, track,
+%and approach the prey in a team mode, and then surround the prey from all
+%directions. When the encirclement is small and perfect enough, $\beta{}$ and $\delta{}$,
+%which are closest to the prey, attack the prey under the command of $\alpha{}$,
+%When the prey escapes, the rest of the grey wolves move quickly to form a new
+%circle of prey. So that they can constantly attack the prey in all directions,
+%and finally capture the prey.
+
+In the GWO algorithm, $\alpha{}$, $\beta{}$ and
+$\delta{}$ perform the pursuit behavior, and $\omega{}$ follows them to track and
+suppress prey, and finally complete the predation task. When GWO algorithm is
+used to solve the continuous function optimization problem, it is assumed that
+the number of grey wolves in the grey wolf population is $N$ and the search space
+is $d$ dimension. The position of the $i$-th grey wolf in $d$ dimensional space can
+be expressed as $x^{(i)}=(x_1^{\left(i\right)},\cdots{},x_d^{\left(i\right)})$.
+The current optimal individual in the population is denoted as $\alpha{}$, the
+corresponding individuals with the second and third fitness values are denoted as
+$\beta{}$ and $\delta{}$, the rest of individuals are denoted as $\omega{}$,
+and the prey position corresponds to the global optimal solution of the
+optimization problem.
+
+During predation, the grey Wolf first needs to surround the
+prey. In GWO algorithm, the corresponding distance between the individual and
+the prey needs to be determined, here the corresponding distance is calculated
+according to equation (1).
+
+
+
+\begin{equation}
+D=\vert{}C\times X_p\left(t\right)-X(t)\vert{}
+%eq1
+\end{equation}
+
+Where, $X_p\left(t\right)$ represents the position of prey $p$ ($p\in\{\alpha,\beta,\delta\}$) in the
+$t$ generation, and $X(t)$ represents the position of individual grey wolf in the
+$t$ generation, the constant $C$ is the wobble factor and is determined by the
+following equation (2).
+
+
+
+\begin{equation}
+C=2r_1
+%eq2
+\end{equation}
+
+Where $r_1$ is a random number in $[0,1]$.
+
+grey wolf location updated by equation (3).
+
+{\raggedright
+
+
+\begin{equation}
+X_p\left(t+1\right)=X_p\left(t\right)-A\times D
+%eq3
+\end{equation}
+
+Where $A$ is the convergence factor, which is determined by the following
+equation (4).
+}
+
+
+
+\begin{equation}
+A=2ar_2-a
+%eq4
+\end{equation}
+
+Where $r_2$ is a random number in $[0,1]$, and $a$ is linearly decreasing
+from 2 to 0 as the number of iterations increases.
+
+When the grey wolf determines the location of the prey, the
+$\alpha{}$ wolf will lead the $\beta{}$ and $\delta{}$, and launch the hunt for
+prey. In wolves, $\alpha{}$, $\beta{}$ and $\delta{}$ are closest to the prey, and
+their positions can be used to determine the location of the prey. It can be
+calculated according to equations 5-11.
+
+\begin{equation}
+D_{\alpha{}}=\vert{}C_1\times X_{\alpha{}}(t)-X(t)\vert{}
+\end{equation}
+
+\begin{equation}
+D_{\beta{}}=\vert{}C_2\times X_{\beta{}}(t)-X(t)\vert{}
+\end{equation}
+
+\begin{equation}
+D_{\delta{}}=\vert{}C_3\times X_{\delta{}}(t)-X(t)\vert{}
+\end{equation}
+
+\begin{equation}
+X_1=X_{\alpha{}}-A_1\times D_{\alpha{}}
+\end{equation}
+
+\begin{equation}
+X_2=X_{\beta{}}-A_2\times D_{\beta{}}
+\end{equation}
+
+\begin{equation}
+X_3=X_{\delta{}}-A_3\times D_{\delta{}}
+\end{equation}
+
+\begin{equation}
+G\_m\left(t+1\right)=\frac{1}{3}(X_1+X_2+X_3)
+\end{equation}
+
+Where $C_1,\ C_2,C_3,A_1,A_2,A_3$ are generated by equations 2,4.
+
+ %The optimization process of GWO algorithm can be expressed as: Firstly,
+%a group of grey wolves is randomly generated in the search space. Secondly, in
+%the process of evolution, $\alpha{}$, $\beta{}$ and $\delta{}$ are responsible for
+%evaluating the position of prey (global optimal solution). The rest of the
+%group calculates the distance between themselves and prey according to this
+%standard, and completes the behavior of approaching, surrounding and attacking
+%the prey in an all-round way.Finally catches the prey.
+
+%\subsection{Powell local searching}
+%\label{2.2}
+%Powell search method is a direct local search method for solving
+%unconstrained optimization problems. It has the advantages of fast convergence,
+%no need to calculate gradient, high precision, strong local search ability, etc.
+%The disadvantage is that it is sensitive to the initial point. Based on the conjugate direction method, the quadratic functions in
+%finite number functions is minimized, and the convergence rate of
+%nonlinear objective functions is expected to accelerated. The specific Powell local search method can be
+%described as follows [47,48]:
+%
+%Step 1: Set initial position $x_0\in{}S$(Feasible solution set),
+%algorithm termination accuracy $\epsilon{}$, $n$ linearly independent search
+%directions $d_i(i=0,1,2,\cdots{},n)$, default $d_i=e_i$(Unit coordinate
+%vector),$\ k=0$.
+%
+%Step 2: Starting from $x_0$, for each $i=0,1,2,\cdots{},n-1$, computes:
+%
+%\begin{equation}
+%{\alpha{}}_i=\arg\min_{\alpha{}\in{}R}{f\left(x_i+\alpha{}d_i\right)}
+%\end{equation}
+%
+%\begin{equation}
+%x_{i+1}=x_i+{\alpha{}}_id_i
+%\end{equation}
+%
+%Step 3: Let $d_n=x_n-x_0$. If
+%$\left\Vert{}d_n\right\Vert{}\leq{}\epsilon{}$, then $x_n$ is solved and the
+%calculation ends; or else, compute:
+%
+%\begin{equation}
+%{\alpha{}}_n=\arg\min_{\alpha{}\in{}R}{f\left(x_n+\alpha{}d_n\right)}
+%\end{equation}
+%
+%\begin{equation}
+%x_{n+1}=x_n+{\alpha{}}_nd_n
+%\end{equation}
+%
+%Step 4: Compute:
+%\begin{equation}
+%t=\arg\min_{0\leq{}i\leq{}n}{\{f\left(x_i\right)-f\left(x_{i+1}\right)\}}
+%\end{equation}
+%
+%\begin{equation}
+%f\left(x_0\right)-2f\left(x_n\right)+f(2x_n-x_0)\geq{}2(f\left(x_t\right)-f\left(x_{t+1}\right))
+%\end{equation}
+%
+%
+%If equation (17) is true, then let $x_0=x_{n+1},\ k=k+1$, and jump to
+%step 2; or else set $d_{t+i}=d_{t+i+1},i=0,1,\cdots{},n-t-1$, $x_0=x_{n+1},\
+%k=k+1$, and jump to step 2.
+
+\section{The grey wolf algorithm optimized by Local optimum}
+\label{3}
+In the original GWO algorithm, the movement direction and
+movement distance of each individual in the population were determined by the
+location information of the three grey wolves with the highest fitness value in
+the population. Therefore, the three individuals with the highest scores at each
+moment determine the evolution direction of the whole population. If these three
+individuals fall into the local optimal, the probability of the whole population
+falling into the local optimal increases dramatically, which can also be verified
+by the experimental results. The optimization results of unimodal functions are
+obviously much better than those of multi-modal functions. Although the control
+parameters $A$ and $C$ can help the algorithm escape from local optimality, this
+influence gradually decreases with the increase of iterations. As a result, the
+algorithm is more sensitive to the initial population state when dealing with
+some multi-modal functions, and it is easier to fall into local optimality.
+
+The Powell local search method[30] can be regarded as an extension of the classical
+Newton iteration method, which changes the traditional single-direction gradient
+search to multi-direction search, improves the performance of gradient
+descent method, and is prone to falling into local optimality. However, its
+local characteristics are obvious, and the search is relatively time-consuming,
+so it is more likely to fall into local optimality when solving multi-peak
+functions. If we compare the optimization process with the human growth process, GWO focuses on individual sociality and ignoring individual evolution,
+while Powell local search only focuses on individual evolution without
+considering individual sociality. The two are obviously complementary. Therefore,
+how to make use of their complementarity and reduce the time cost caused by
+Powell's iterative search is a topic worth studying. However, the practice of
+using Powell's local search only on the basis of individual location
+obtained by GWO may greatly change the guiding effect of the optimal individual
+in GWO on the movement direction of other individuals, or even in the opposite
+direction, thus reducing the sociality of individuals. Although the iterative
+process of Powell's local search is time-consuming and highly dependent on the
+initial direction, its multi-direction local search idea can be used to
+improve the individual's own evolutionary ability in GWO, so as to make up for
+the fact that GWO only focuses on sociality and lacks the individual's own
+learning characteristics.
+
+\subsection{Random local search}
+\label{3.1}
+In order to make full use of local information and
+complete local optimal search with minimal cost, the proposed random local
+search, retains the search strategy along dimensions in Powell, but abandons its
+optimization process of iterative search along dimensions. For each
+individual in the population, its renewal candidate is located on a randomly selected dimension, and the distance length to that individual is $r$, Here $r$ decreases as the number
+of iteration steps increases, and the position is randomly perturbed. Then choose
+the best one from $D$ candidates as the next update position of the individual.
+Finally, in each iteration of GWO, the individual update value in the population
+is jointly determined by the random local search update value and the global
+update value obtained by GWO.
+
+The number of random search directions is set as $D$, the
+search radius is denoted as $r$, which decreases with the number of iterative
+steps of the algorithm, the current individual position is denoted as $x$, its
+dimension is $n$, and the fitness function is $fobj()$.The proposed random local
+search method can be expressed as algorithm 1:
+
+$\\$
+\textbf{Algorithm 1} Random local search method
+
+\textbf{Input:} individual position $x$, searching radius $r$, The number of
+random search directions $D$.
+
+\textbf{Output:} Local update value $x^{(j)}$.
+
+\textbf{Step 1:} Randomly generate $D$ search directions (that is, randomly select
+$D$ dimension from $n$ coordinate dimensions), denoted as $d_1,\cdots{},d_D$.
+
+\textbf{Step 2:} Compute:
+\begin{equation}
+x^{(i)}=x\pm{}rand()\times{}r{\times{}d}_i,\ \ i=1,2,\cdots{},D.
+\end{equation}
+
+
+
+\begin{equation}
+j=\arg\min_{i}{fobj(x^i)}.
+\end{equation}
+
+
+Step 3: Return $x^{(j)}$.
+
+$\\$
+In each iteration of GWO, the random local search method is used to
+calculate the local optimal value of each individual $x$, and the local update
+value of $x$ is calculated according to Equation  (14) :
+
+
+\begin{equation}
+L\_m=|Cx^{\left(j\right)}-x|
+\end{equation}
+Where $C=2.0rand(1,dim)$.
+
+\subsection{GWO algorithm with Random local search and first-element dominance}
+\label{3.2}
+In view of the defect that classical GWO algorithm does not consider individual local information, which may lead to local optimization easily, this paper tries to integrate the local search results given in Section 3.1 into the classical GWO search results, so as to reduce the possibility of GWO search falling into local optimization.In the proposed algorithm, we combine the global optimal value obtained from classical GWO and the local optimal value obtained from local search by a simple weighted combination method.
+
+Assuming that the global update value obtained by GWO denotes as $G\_m$,
+$L\_m$ and $G\_m$ can be combined according to the formula
+${\lambda{}}_1G\_m+{\lambda{}}_2L\_m$ to obtain different update values of individual $x$.
+However, in our experiment, it is difficult to find uniform weights ${\lambda{}}_1$ and ${\lambda{}}_2$ to make their corresponding weighted combinations adapt to different problems.
+In order to facilitate calculation and not increase the calculation cost too much, on the basis of many experiments, this paper selects 6 groups of weights, which are respectively  (1,0),(1,1),(0.5,0.5),(0.6,0.4),(0.7,0.3),(0.8,0.2). In each iteration, the optimal combination  selected from the 6 weighted combinations serves as the new position value of the current individual.
+
+In our algorithm, the 6 combinations listed in Equation (15) are used to
+calculate the candidate update value of $x$.
+
+
+
+\begin{equation}
+\left\{\begin{array}{
+cccccc}
+{tx}^{(1)}=G\_m; \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \\
+{tx}^{(2)}=G\_m(1)+L\_m;     \ \ \ \ \ \ \ \ \ \ \ \\
+{tx}^{(3)}=0.5G\_m(1)+0.5L\_m; \\
+{tx}^{(4)}=0.6G\_m(1)+0.4L\_m; \\
+{tx}^{(5)}=0.7G\_m(1)+0.3L\_m; \\
+{tx}^{(6)}=0.8G\_m(1)+0.2L\_m.
+\end{array}\right.
+\end{equation}
+
+Then the fitness value of each combination is calculated, and the
+combination with the smallest value is the final update value of the individual
+$x$. Namely,
+
+
+
+\begin{equation}
+j=\arg\min_{1\leq{}i\leq{}6}{\{fobj({tx}^{(i)})\}}
+\end{equation}
+
+
+${tx}^{(j)}$ is the updated value of the current individual $x$.
+
+
+%\includepdf[pages={1}]{fig1.pdf}% 注意filename提前准备好，一般放在同一路径下
+
+
+It can be seen from Equation (15) that when combining with the local update
+value, we do not use ${\lambda{}}_1G\_m+{\lambda{}}_2L\_m$, but
+${\lambda{}}_1G\_m(1)+{\lambda{}}_2L\_m$. Here $G\_m(1)$ denotes the first element of $G\_m$, The first element of the update value
+obtained by classical GWO is combined with the local update value to produce a
+set of vectors, and the vector with the best fitness is selected as the final
+position update value of the population individual. Why does substituting $G\_m(1)$ for $G\_m$ in a combination yield better results? We haven't found a theoretical basis for this yet, it's just that we found this phenomenon in experiments.The experimental results given in Table 8 in Section 4.5 show that the first-element combination has obvious advantages, especially in the first 15 functions among the 23 basic test functions.
+The propose GWO algorithm with Random local search and first-element dominance can be described as algorithm 2.
+
+$\\$
+\textbf{Algorithm 2} GWO algorithm with Random local search and first-element dominance
+
+\textbf{Input}: population size $N$,variable number $dim$,lower bound $lb$,upper bound $ub$,maximum iteration number $MaxIter$,initial local search radius $r$,random local search direction number $dn$.
+
+\textbf{Output}: best individual position, best individual fitness.
+
+\textbf{Step 1}:initializing population $x$
+
+\textbf{Step 2}:computing the fitness of each individuals in population $Fit$.
+
+\textbf{Step 3}:Three individuals with the best fitness were selected from the population and recorded as $\alpha$,$\beta$ and $\delta$ respectively.
+
+\textbf{Step 4}: set $t=1$.
+
+\textbf{Step 5}:while $t<MaxIter$
+
+\quad    \textbf{Step 5.1}: set $r=r/t^2$,$a=2-t*((2)/(MaxIter))$.
+
+\quad    \textbf{Step 5.2}:for each individual $x_i$ in population
+
+\quad \quad \textbf{Step 5.2.1}:computing the local updated value $L\_m$ of $x_i$ by Equation (14).
+
+\quad \quad \textbf{Step 5.2.2}:computing the global update value $G\_m$ of $x_i$ by Equation (1-11).
+
+\quad \quad \textbf{Step 5.2.3}:computing the global update value $tx^{(1)},\cdots,tx^{(6)}$ and $j$  by Equation (15-16).
+
+\quad \quad \textbf{Step 5.2.3}:let $x_i=tx^{(j)}$.
+
+\quad \quad \textbf{Step 5.2.4}:excute Out-of-boundary adjustment for $x_i$.
+
+\quad    \textbf{Step 5.3}:Update $\alpha$,$\beta$ and $\delta$.
+
+\quad    \textbf{Step 5.4}:let $t=t+1$.
+
+\textbf{Step 6}: return the position and fitness of $\alpha$.
+
+$\\$
+The flow chart of the proposed algorithm is shown in Figure 1.
+
+\begin{figure}
+\scriptsize
+% 流程图定义基本形状
+\tikzstyle{startstop} = [rectangle, rounded corners, minimum width = 2cm, minimum height=1cm,text centered, draw = black]
+\tikzstyle{io} = [trapezium, trapezium left angle=70, trapezium right angle=110, minimum width=2cm, minimum height=1cm, text centered, draw=black]
+\tikzstyle{process} = [rectangle,auto, minimum width=3cm, minimum height=0.5cm, text centered, draw=black]
+\tikzstyle{decision} = [diamond, aspect = 3, text centered, draw=black]
+\tikzstyle{point}=[coordinate,on grid,]
+\tikzstyle{arrow} = [->,>=stealth]
+
+\centerline{
+\begin{tikzpicture}[node distance=0.5cm]
+%定义流程图具体形状
+\node[startstop](start){Start};
+\node[process,below of =start,yshift=-1cm](init){\makecell*[c]{
+Set the initial parameters $a,A,C$, Population size $N$, Maximum iteration$\ MaxIter$,\\
+Initial population $X$,Initial radius $r$,Random Dimension $D$. Initial recursion $t=1$}
+};
+\node[process,below of =init,yshift=-1cm](pro1){large Calculate the fitness of each individual in the population and select the best three individuals as: $\alpha{},\beta{},\delta{}$};
+\node[decision, below of = pro1, yshift = -1cm](dec1){$t<MaxIter$};
+\node[process,below of =dec1,yshift=-1cm](pro2){\makecell*[c]{$a=2(1-t/MaxIter)$, \\ $r=r/t^2$}};
+\node[process,below of =pro2,yshift=-1cm](pro3){$i=1$};
+\node[decision, below of = pro3, yshift = -1cm](dec2){$i\leq N$};
+\node[process,right of =dec2,xshift=3cm](pro4){$t=t+1$};
+\node[point,below of=dec2,yshift=-0.2cm](point1){};
+\node[point,below of=point1,yshift=-4cm](point2){};
+\node[process,below of =dec2,yshift=-1.5cm,xshift=-2.5cm](pro5){\makecell*[c]{Calculate the three updates of \\individual $x_i$ by formulas 5-10:\\$X_1,X_2,X_3$.}
+};
+\node[process,below of =dec2,yshift=-1.5cm,xshift=2.5cm](pro6){\makecell*[c]{Calculate the local movement of\\
+individual $x_i$ by Algorithm 1:\\$x^{(t)}$}};
+\node[process,below of =pro5,yshift=-1.5cm](pro7){\makecell*[c]{Calculate the global update value\\ of individual $x_i$\\$G\_m=\frac{1}{3}(X_1+X_2+X_3)$}};
+\node[process,below of =pro6,yshift=-1.5cm](pro8){\makecell*[c]{Calculate the local update value \\of individual $x_i$\\$L\_m=Cx^{\left(t\right)}-x$}};
+\node[process,below of =pro7,yshift=-2.5cm,xshift=2.5cm](pro9){\makecell*[l]{${tx}^{(1)}=G\_m;$\\${tx}^{(2)}=G\_m(1)+L\_m;$
+\\${tx}^{(3)}=0.5G\_m(1)+0.5L\_m;$
+\\${tx}^{(4)}=0.8G\_m(1)+0.2L\_m;$\\
+${tx}^{(5)}=0.7G\_m(1)+0.3L\_m;$\\
+${tx}^{(6)}=0.8G\_m(1)+0.2L\_m.$}};
+\node[process,below of =pro9,yshift=-1.7cm](pro11){$x_i=min({tx}^{(1)},{tx}^{(2)},{tx}^{(3)},{tx}^{(4)},{tx}^{(5)} ,{tx}^{(6)})
+$};
+\node[process,left of =pro11,xshift=-4.3cm](pro10){$i=i+1$};
+\node[point,left of=dec1,xshift=-6.2cm](point3){};
+\node[point,below of=point3,yshift=-13.9cm](point4){};
+\node[process,below of =pro11,yshift=-1cm](pro12){Output $x_{\alpha{}}$ };
+%%连接具体形状
+\draw[->] (start)--(init);
+\draw[->] (init)--(pro1);
+\draw[->] (pro1)--(dec1);
+\draw[->] (dec1)--node[left]{Yes}(pro2);
+\draw[->] (pro2)--(pro3);
+\draw[->] (pro3)--(dec2);
+\draw[->] (dec2)--node[above]{No}(pro4);
+\draw[->] (pro4)|-(dec1);
+\draw[-] (dec2)--node[left]{Yes}(point1);
+\draw[->] (point1)-|(pro5);
+\draw[->] (point1)-|(pro6);
+\draw[->] (pro5)--(pro7);
+\draw[->] (pro6)--(pro8);
+\draw[-] (pro7)|-(point2);
+\draw[-] (pro8)|-(point2);
+\draw[->] (point2)--(pro9);
+\draw[->] (pro9)--(pro11);
+\draw[->] (pro11)--(pro10);
+\draw[->] (pro10)|-(dec2);
+\draw[-] (dec1)--node[above]{No}(point3);
+\draw[-] (point3)--(point4);
+\draw[->] (point4)-|(pro12);
+\end{tikzpicture}
+}
+\caption{The flow chart of the presented algorithm}
+\label{fig:1}
+\end{figure}
+
+\subsection{Analysis of hyper parameter Settings}
+\label{3.3}
+In the proposed algorithm, two hyperparameters need to be set, which are the initial radius $r$ and the random search dimension $D$ of local search. The initial value of the local search radius is generally set to no more than half of the minimum value in the difference between the upper and lower bounds of all variables. If the initial search radius is too large, the individual update value will easily fluctuate, and if it is too small, the random effect of local search will not be achieved.
+In addition, the number of randomly selected dimensions needs to be specified. In order to ensure the randomness and representativeness of the selection, the number of selected dimensions
+should not be too large. Therefore, in our experiment, the number of randomly
+selected dimensions is selected according to Equation (17), that is, half of the
+data dimensions are generally selected as the random selection dimension. When
+the data dimension is less than or equal to 2, the random selection dimension is
+1; when the data dimension is more than 12, only 6 dimensions are selected as the
+random selection dimension. Since the randomly selected dimension does not exceed
+the constant 6, the impact on the calculation time of the algorithm is only a
+constant times, avoiding the time cost caused by the iterative process in Powell
+search method.
+
+
+\begin{equation}
+D=\min{(\max{(1,Dim/2)},6)}.
+%eq5
+\end{equation}
+
+Where  $Dim$ is data dimension.
+
+
+\subsection{Algorithm complexity analysis}
+\label{3.4}
+This section discusses the time complexity of the proposed algorithm. Traditionally, the time complexity of swarm intelligence algorithms is a big $O$ function of population size $N$, problem dimension $dim$ and maximum number of iterations $MaxIter$. The execution time of the proposed algorithm mainly includes: population initialization, fitness evaluation, classical GWO generating individual updates, local search generating updates, combination selection, updating $\alpha$,$\beta$,$\delta$. Among them, the population initialization time complexity is $O(N)$, and the fitness evaluation takes $O(N)$. The operations of classical GWO to generate individual updates include: 6 times $dim$ dimensional random vector generation, 3 times vector dot multiplication and difference operation and taking the absolute value, 3 times vector dot multiplication and difference operation, and 1 time to find the average value of 3 vectors, so the total time is $O(N*dim)$. The operation of local search to generate individual updates includes: randomly generate $D(D<6)$ search directions, randomly generate $D$ individuals, calculate the fitness value of $D$ individuals, and select the individual with the best fitness value from the $D$ individuals, so the total time is $D*O(N*dim)$, because $D(<6)$ is a fixed value, so the time can still be recorded as $O(N*dim)$. The combination selection operation consists of generating 6 combination vectors and selecting the best vector from them with $O(N*dim)$. Updating $\alpha$,$\beta$,$\delta$ can be done with $3N$ comparisons. Finally, the total time complexity of the proposed algorithm is $O(N)+MaxIter*O(N*dim)$, which can be simplified to $O(MaxIter*N*dim)$. It is on the same order of time complexity as classical GWOs.
+
+
+\begin{table}[th]
+\centering
+\caption{23 common standard benchmark functions set.}\label{table:1}
+\begin{tabular}{ccccc}% 其中，tabular是表格内容的环境；c表示centering，即文本格式居中；c的个数代表列的个数
+\toprule %[2pt]设置线宽
+Function No&Function name&Search range&Optimum value&Dim \\ % 换行
+\midrule %[2pt]
+$f_1$&Sphere&[-100,100]&$f_1(0,0,\cdots,0)=0$&30\\
+$f_2$&Schwefel’s Problem2.22&[-10,10]&$f_2(0,0,\cdots,0)=0$&30\\
+$f_3$&Schwefel’s Problem1.2&[-100,100]&$f_3(0,0,\cdots,0)=0$&30\\
+$f_4$&Schwefel’s Problem2.21&[-100,100]&$f_4 (0,0,\cdots,0)=0$&30\\
+$f_5$&Generalized Rosenbrock&[-30,30]&$f_5(1,1,\cdots,1)=0$&30\\
+$f_6$&Step&[-100,100]&$f_6(0,0,\cdots,0)=0$&30\\
+$f_7$&\makecell{Quartic Func-tion \\i.e. Noise}&[-1.28,1.28]&$f_7(0,0,\cdots,0)=0$&30\\
+$f_8$&\makecell{Generalized Schwefel's\\ Problem2.26}&[-500,500]&$\makecell{f_8(420.9687,\cdots,420.9687)\\=-12569.5}$&30\\
+$f_9$&Generalized Rastrigin&[-5.12,5.12]&$f_9(0,0,\cdots,0)=0$&30\\
+$f_{10}$&Ackley&[-32,32]&$f_{10}(0,0,\cdots,0)=0$&30\\
+$f_{11}$&Generalized Griewank&[-600,600]&$f_{11}(0,0,\cdots,0)=0$&30\\
+$f_{12}$&Generalized Penalized&[-50,50]&$f_{12}(0,0,\cdots,0)=0$&30\\
+$f_{13}$&Generalized Penalized&[-50,50]&$f_{13}(0,0,\cdots,0)=0$&30\\
+$f_{14}$&Shekel’sFox holes&[-65.536,65.536]&$f_{14}(-32,\cdots,32)≈1$&2\\
+$f_{15}$&Kowalik&[-5,5]&$\makecell{f_{15}(\makecell{0.1928,0.1908,\\0.1231,0.1358})\\\approx0.0003075}$&4\\
+$f_{16}$&Six-Hump Camel-Back&[-5,5]&$min(f_{16})=-1.0316285$&2\\
+$f_{17}$&Branin&[-5,0;10,15]&$min(f_{17})=0.398$&2\\
+$f_{18}$&Goldstein Price&[-2,2]&$f_{18}(0,-1)=3$&2\\
+$f_{19}$&Hartman’ Family&[0,1]&$min(f_{19})=-3.86$&3\\
+$f_{20}$&Hartman’ Family&[0,1]&$min(f_{20})=-3.32$&6\\
+$f_{21}$&Shekel’s Family&[0,10]&$min(f_{21})=-10.1532$&4\\
+$f_{22}$&Shekel’s Family&[0,10]&$min(f_{22})=-10.4028$&4\\
+$f_{23}$&Shekel’s Family&[0,10]&$min(f_{23})=-10.5363$&4\\
+\bottomrule %[2pt]
+\end{tabular}
+\end{table}
+
+\section{Experimental analysis}
+\label{4}
+In order to verify the optimization performance of the proposed
+algorithm, 23 standard test functions for single objective optimization in
+literature [18], which are commonly used internationally, are selected as the
+test benchmark function set of this experiment, and the latest improved algorithm
+of GWO is selected as the comparison benchmark algorithm. These include seven
+single-module functions ($f_1\sim f_7$), six multi-module functions
+($f_8\sim f_{13}$), and ten fixed-dimensional functions
+($f_{14}\sim f_{23}$). In order to facilitate comparison with other
+recent GWO improved algorithms, we also select a function set with 10 benchmark
+functions of CEC2019 used in reference [44], and 15 test function sets given in
+reference [47]. And 22 Real World Constraint Optimization problems from CEC2020
+Real World Single Objective Constraint Optimization Competition. The all
+numerical experiments are run in MATLAB R2018b on a PC with Intel(R) Core(TM)
+i5-9600KF 64-bit, CPU:@3.70 GHz, and 16G RAM without GPU.The code can be download from https://www.mathworks.com/matlabcentral/fileexchange/166146-rlgwo.
+
+
+
+\subsection{Comparison of test results on a set of 23 common standard
+test functions}
+ \label{4.1}
+
+As a basic test function of single-objective optimization,
+23 common standard benchmark functions are used as test functions by almost all
+intelligent optimization algorithms, including basic single-mode, multi-mode
+and fixed dimension test functions, which can reflect the basic optimization
+performance of an optimization algorithm. This set of functions is listed here in
+Table 1 for ease of reference in future research. In the experiment on this
+function set, in order to conveniently compare the performance of GWO
+algorithm improvement strategies, we choose classical GWO and the latest improved methods CMWGWO, TLGWO,LMWOAGWO and the latest SMA improved algorithm EISMA as the benchmark algorithms for comparison. In the experiment, for all algorithms, the number of population is set to 50, the
+maximum number of iterations is 1000, and the algorithm runs independently on
+each function 30 times. The experimental results are listed in Table 2.
+
+
+\begin{table}[hp]
+\centering
+\caption{Comparison of running results on 23 baseline function sets.}\label{table:2}
+\begin{tabular}{cccccccc}% 其中，tabular是表格内容的环境；c 表示centering，即文本格式居中；c的个数代表列的个数
+
+\toprule %[2pt]设置线宽
+
+Function&&GWO&EISMA&CMWGWO&TLGWO&LMWOAGWO&Our \\ % 换行
+\midrule %[2pt]
+$f_1$&\makecell{Ave\\(std)}&\makecell{3.06E-59\\(1.27E-59)}&\makecell{\textbf{0}\\(0)}&\makecell{\textbf{0}\\(0)}&\makecell{\textbf{0}\\(0)}&\makecell{\textbf{0}\\(0)}&\makecell{\textbf{0}\\(0)}\\
+$f_2$&\makecell{Ave\\(std)}&\makecell{2.03E-34\\(5.31E-35)}&\makecell{\textbf{0}\\(0)}&\makecell{\textbf{0}\\(0)}&\makecell{\textbf{0}\\(0)}&\makecell{4.43E-293\\(0)}&\makecell{4.41E-314\\(0)}\\
+$f_3$&\makecell{Ave\\(std)}&\makecell{2.58E-15\\(1.41E-15)}&\makecell{\textbf{0}\\(0)}&\makecell{\textbf{0}\\(0)}&\makecell{\textbf{0}\\(0)}&\makecell{\textbf{0}\\(0)}&\makecell{6.92E-259\\(0)}\\
+$f_4$&\makecell{Ave\\(std)}&\makecell{1.43E-14\\(3.95E-15)}&\makecell{8.34E-216\\(2.50E-214)}&\makecell{\textbf{0}\\(0)}&\makecell{1.73E-05\\(1.22E-05)}&\makecell{7.16E-260\\(0)}&\makecell{\textbf{0}\\(0)}\\
+$f_5$&\makecell{Ave\\(std)}&\makecell{26.8896\\(0.099447)}&\makecell{3.8322\\(1.6579)}&\makecell{27.3288\\(0.1268)}&\makecell{28.609\\(0.06742)}&\makecell{21.79953\\(0)}&\makecell{\textbf{5.99E-02}\\(7.81E-03)}\\
+$f_6$&\makecell{Ave\\(std)}&\makecell{0.61169\\(0.059235)}&\makecell{0.00283\\(0.00028)}&\makecell{0.47281\\(0.05835)}&\makecell{5.2769\\(0.072224)}&\makecell{0.001769\\(0.000532)}&\makecell{\textbf{1.79E-05}\\(1.03E-06)}\\
+$f_7$&\makecell{Ave\\(std)}&\makecell{8.89E-04\\(1.03E-04)}&\makecell{0.00014\\(1.6818E-05)}&\makecell{5.6436E-05\\(1.232E-05)}&\makecell{6.69E-04\\(1.09E-04)}&\makecell{5.90E-05\\(4.29E-05)}&\makecell{\textbf{3.54E-05}\\(5.12E-06)}\\
+$f_8$&\makecell{Ave\\(std)}&\makecell{-5517.6479\\(218.9043)}&\makecell{\textbf{-12569.4419}\\(0.005589)}&\makecell{-8328.1\\(440.3859)}&\makecell{-2.52E03\\(74.0627)}&\makecell{-10207.41\\(627.37695)}&\makecell{-12331.0516\\(161.7748)}\\
+$f_9$&\makecell{Ave\\(std)}&\makecell{0.31209\\(0.19578)}&\makecell{\textbf{0}\\(0)}&\makecell{\textbf{0}\\(0)}&\makecell{0\\(0)}&\makecell{\textbf{0}\\(0)}&\makecell{\textbf{0}\\(0)}\\
+$f_{10}$&\makecell{Ave\\(std)}&\makecell{1.64E-14\\(4.88E-16)}&\makecell{8.8818E-16\\(0)}&\makecell{8.8818E-16\\(0)}&\makecell{9.88E-03\\(1.56E-03)}&\makecell{\textbf{4.44E-16}\\(0)}&\makecell{8.88E-16\\(0)}\\
+$f_{11}$&\makecell{Ave\\(std)}&\makecell{2.63E-03\\(1.12E-03)}&\makecell{\textbf{0}\\(0)}&\makecell{\textbf{0}\\(0)}&\makecell{\textbf{0}\\(0)}&\makecell{\textbf{0}\\(0)}&\makecell{\textbf{0}\\(0)}\\
+$f_{12}$&\makecell{Ave\\(std)}&\makecell{0.38637\\(3.22E-03)}&\makecell{0.00178\\(0.00041)}&\makecell{0.031757\\(0.0028)}&\makecell{0.69952\\(0.028411)}&\makecell{0.00293\\(0.001196)}&\makecell{\textbf{2.69E-06}\\(1.99E-07)}\\
+$f_{13}$&\makecell{Ave\\(std)}&\makecell{0.49832\\(0.035318)}&\makecell{0.00364\\(0.00052)}&\makecell{0.8404\\(0.095297)}&\makecell{2.98\\(5.22E-03)}&\makecell{0.001169\\(0.000348)}&\makecell{\textbf{4.13E-05}\\(2.49E-06)}\\
+$f_{14}$&\makecell{Ave\\(std)}&\makecell{4.9755\\(0.81268)}&\makecell{\textbf{0.998}\\(1.099E-11)}&\makecell{1.1634\\(0.09452)}&\makecell{4.9573\\(0.71187)}&\makecell{2.25442\\(1.00901)}&\makecell{2.0736\\(0.53585)}\\
+$f_{15}$&\makecell{Ave\\(std)}&\makecell{3.04E-03\\(1.24E-03)}&\makecell{0.000393\\(1.9839E-05)}&\makecell{0.0004657\\(2.4076E-05)}&\makecell{5.01E-04\\(2.69E-05)}&\makecell{0.000308\\(1.08E-08)}&\makecell{\textbf{3.07E-04}\\(4.41E-09)}\\
+$f_{16}$&\makecell{Ave\\(std)}&\makecell{\textbf{-1.0316}\\(6.1574E-10)}&\makecell{\textbf{-1.0316}\\(9.402E-09)}&\makecell{-1.0315\\(1.7844E-05)}&\makecell{-1.0301\\(1.08E-03)}&\makecell{-1.031628\\(2.76E-07)}&\makecell{\textbf{-1.0316}\\(4.329E-10)}\\
+$f_{17}$&\makecell{Ave\\(std)}&\makecell{\textbf{0.39789}\\(2.41E-08)}&\makecell{\textbf{0.39789}\\(1.2E-07)}&\makecell{0.39843\\(0.000384)}&\makecell{0.39859\\(1.33E-04)}&\makecell{0.397897\\(7.95E-06)}&\makecell{\textbf{0.39789}\\(9.32E-09)}\\
+$f_{18}$&\makecell{Ave\\(std)}&\makecell{\textbf{3}\\(1.29E-06)}&\makecell{\textbf{3}\\(4.488E-09)}&\makecell{3.00\\(4.8208E-06)}&\makecell{3.0001\\(4.07E-05)}&\makecell{3.000003\\(4.99E-05)}&\makecell{\textbf{3}\\(2.23E-07)}\\
+$f_{19}$&\makecell{Ave\\(std)}&\makecell{-3.8619\\(4.19E-04)}&\makecell{\textbf{-3.8628}\\(4.133E-06)}&\makecell{-3.8628\\(6.563E-06)}&\makecell{-3.8547\\(8.76E-04)}&\makecell{-3.86277\\(5.57E-06)}&\makecell{-3.8622\\(3.43E-04)}\\
+$f_{20}$&\makecell{Ave\\(std)}&\makecell{-3.22\\(2.93E-07)}&\makecell{-3.2305\\(0.00921)}&\makecell{-3.2548\\(0.011)}&\makecell{-3.0498\\(2.04E-02)}&\makecell{-3.29415\\(0.5113)}&\makecell{\textbf{-3.322}\\(7.66E-07)}\\
+$f_{21}$&\makecell{Ave\\(std)}&\makecell{-9.8162\\(0.2301)}&\makecell{-10.153\\(2.825E-05)}&\makecell{-10.074\\(0.0737)}&\makecell{-6.0234\\(0.25356)}&\makecell{-10.1421\\(0.007254)}&\makecell{\textbf{-10.1531}\\(1.72E-05)}\\
+$f_{22}$&\makecell{Ave\\(std)}&\makecell{-10.4027\\(1.72E-05)}&\makecell{-10.4027\\(5.2185E-05)}&\makecell{-10.2734\\(0.1165)}&\makecell{-6.0858\\(0.24856)}&\makecell{-10.3998\\(0.008346)}&\makecell{\textbf{-10.4028}\\(1.68E-05)}\\
+$f_{23}$&\makecell{Ave\\(std)}&\makecell{-10.5362\\(1.10E-05)}&\makecell{-10.5362\\(6.529E-05)}&\makecell{-10.4057\\(0.0894)}&\makecell{-6.2545\\(0.18648)}&\makecell{-10.5269\\(0.007653)}&\makecell{\textbf{-10.5363}\\(1.791E-05)}\\
+\bottomrule %[2pt]
+\end{tabular}
+\end{table}
+
+
+
+From the test results of 23 benchmark functions listed in Table 2, it
+can be seen that the algorithm proposed in this paper is in a leading position in
+17 of them, and the results obtained by the proposed algorithm are also very good
+on several other functions that are not the best results. For example, the
+average values of the functions $f_2$ and $f_3$ are $4.41E-314$ and $6.92E-259$
+respectively, which are not much different from the optimal solution 0.
+Consider that 7 of the 23 benchmark functions are unimodal, 6 are multimodal, and 10 are fixed-dimensional. The proposed
+algorithm has obtained the best solution in 5 of the 7 single modular functions,
+and the other 2 are very close to the best solution. Therefore, the proposed
+algorithm has significant advantages in solving the optimization of single
+modular functions. On 6 multimodular functions, the proposed algorithm reaches
+the optimal solution in 5 of them, and only one slightly lower
+than the best solution of other algorithms, so it ranks second. The result shows that our algorithms are also suitable for multimode cases. Among
+the 10 fixed dimension benchmark functions, our algorithm achieves optimal
+results in 7 of them, with the optimal mean value and the
+smallest variance.These results show that our algorithm can also achieve
+good results when dealing with fixed dimension.
+Although EISMA, an algorithm that combines The differential evolution(DE) and slime mould algorithm(SMA), which have great influence in recent years, only reaches the optimal value on 11 benchmark functions, there is still a certain gap with the proposed algorithm.Among the other three GWO improved algorithms, only the CMWGWO reported in 2024 is optimal on the six basic functions, and the other two algorithms are lower. These are far from the proposed algorithm.It can be seen that the improvement measures of classical GWO proposed in this paper: random local search and first-element dominance can greatly improve the optimization performance of GWO.
+
+\begin{figure}[thbp]
+	\centering
+    \includegraphics[width=0.3\textwidth]{image/f1.png}
+    \includegraphics[width=0.3\textwidth]{image/f2.png}
+    \includegraphics[width=0.3\textwidth]{image/f3.png}
+    \includegraphics[width=0.3\textwidth]{image/f4.png}
+    \includegraphics[width=0.3\textwidth]{image/f5.png}
+    \includegraphics[width=0.3\textwidth]{image/f6.png}
+    \includegraphics[width=0.3\textwidth]{image/f7.png}
+    \includegraphics[width=0.3\textwidth]{image/f8.png}
+    \includegraphics[width=0.3\textwidth]{image/f9.png}
+    \includegraphics[width=0.3\textwidth]{image/f10.png}
+    \includegraphics[width=0.3\textwidth]{image/f11.png}
+    \includegraphics[width=0.3\textwidth]{image/f12.png}
+    \includegraphics[width=0.3\textwidth]{image/f13.png}
+    \includegraphics[width=0.3\textwidth]{image/f14.png}
+    \includegraphics[width=0.3\textwidth]{image/f15.png}
+
+\end{figure}
+
+\begin{figure}[thbp]
+%\centering
+%\end{figure}
+%\begin{figure}
+%	\centering
+    \includegraphics[width=0.3\textwidth]{image/f16.png}
+    \includegraphics[width=0.3\textwidth]{image/f17.png}
+    \includegraphics[width=0.3\textwidth]{image/f18.png}
+    \includegraphics[width=0.3\textwidth]{image/f19.png}
+    \includegraphics[width=0.3\textwidth]{image/f20.png}
+    \includegraphics[width=0.3\textwidth]{image/f21.png}
+    \includegraphics[width=0.3\textwidth]{image/f22.png}
+    \includegraphics[width=0.3\textwidth]{image/f23.png}
+\caption{Comparison of convergence of 6 algorithms on 23 benchmark functions.}\label{fig:3}
+\end{figure}
+
+Figure 2 shows the average convergence of the execution
+process of 6 algorithms in 23 benchmark functions. As can be seen from Figure 2,
+the proposed algorithm can converge quickly on all 23 benchmark functions.Compared with the other five algorithms, the convergence speed of the proposed algorithm is one of the fastest convergence algorithms. From the
+convergence graphs of functions $f_8$, $f_{14}$, $f_{19}\sim f_{23}$,
+it can be clearly seen that the fitness of the proposed algorithm can approach
+the target value after very few iterations. The reason is that the proposed
+algorithm uses the local optimal information to optimize the grey wolf search
+results, and use the unique first-element advantage in the global and
+local combination to make the algorithm converge faster.
+
+
+\subsection{Comparison on 15 benchmark functions}
+\label{4.2}
+In order to facilitate the comparison with the latest
+algorithm LMWOAGWO, 15 functions given in literature [47] are also cited as
+comparison benchmark functions, and specific function information is listed in
+Table 3. GWO, EISMA, CMWGWO, TLGWO, LMWOAGWO are selected as the benchmark
+algorithms for comparison. In our experiment, the population size was set to 50,
+the recursion number to 1000, and the data dimension was unified to 30. Each
+algorithm was independently repeated 30 times on each function, and its average
+and variance were counted. The results were listed in Table 4. It can be seen
+from Table 4 that among the 15 benchmark functions, the average value of the
+proposed algorithm achieves the optimal solution in 12 of them. The optimal solution is not reached in the other three functions, the error rate between the result
+of the proposed algorithm and the optimal solution does not exceed 2E-05.
+Especially for the function $f_4$, the optimization results obtained
+by the proposed algorithm have obvious advantages over other three GWO improved algorithms. It can
+be seen that the proposed improvement measures has obvious superior performance.
+
+\begin{table}[h]
+\centering
+\caption{15 test benchmark functions[45].}\label{table:3}
+\begin{tabular}{llcllclclc}% 其中，tabular是表格内容的环境；c 表示centering，即文本格式居中；c的个数代表列的个数
+\toprule %[2pt]设置线宽
+Function Name&Boundaries&$f(x^*)$&Type \\ %换行
+\midrule %[2pt]
+$f_1$:Sphere&[-100,100]&0&unimodal\\
+$f_2$:Schwefel’s Problem 2.22&[-10,10]&0&unimodal\\
+$f_3$:Step&[-100,100]&0&unimodal\\
+$f_4$:Rosenbrock&[-2.048,2.048]&0&multimodal\\
+$f_5$:Rotated Hyper-ellipsoid&[-100,100]&0&unimodal\\
+$f_6$:Schwefel’s problem 2.26&[-500,500]&$-418.98*d$&multimodal\\
+$f_7$:Rastrigin&[-5.12,5.12]&0&multimodal\\
+$f_8$:Ackley&[-32,32]&0&multimodal\\
+$f_9$:Griewank&[-600,600]&0&multimodal\\
+$f_{10}$:Six-Hump Camel-Back&[-5,5]&-1.031628&multimodal\\
+$f_{11}$:Shifted Sphere&[-100,100]&-450&unimodal\\
+$f_{12}$:Shifted Schwefel’s problem 1.2&[-100,100]&-450&unimodal\\
+$f_{13}$:Shifted Rosenbrock&[-100,100]&390&multimodal\\
+$f_{14}$:Shifted Rastrigin&[-5,5]&-330&multimodal\\
+$f_{15}$:Shifted Expanded Griewanks plus Rosenbrock’s Function&[-5,5]&-130&multimodal\\
+\bottomrule %[2pt]
+\end{tabular}
+\end{table}
+
+\begin{table}[th]
+\centering
+\caption{Comparison of execution results on 15 benchmark functions set.}\label{table:4}
+\begin{tabular}{cccccccc}% 其中，tabular是表格内容的环境；c 表示centering，即文本格式居中；c的个数代表列的个数
+\toprule %[2pt]设置线宽
+Function&&GWO&EISMA&CMWGWO&TLGWO&LMWOAGWO&Our\\ % 换行
+\midrule %[2pt]
+$f_{1}$&\makecell{Ave\\(std)}&\makecell{1.39E-69\\(5.88E-69)}&\makecell{\textbf{0}\\(0)}&\makecell{\textbf{0}\\(0)}&\makecell{\textbf{0}\\(0)}&\makecell{\textbf{0}\\(N/A)}&\makecell{\textbf{0}\\(0)}\\
+$f_{2}$&\makecell{Ave\\(std)}&\makecell{6.89E-41\\(1.01E-40)}&\makecell{1.56E-220\\(0)}&\makecell{\textbf{0}\\(0)}&\makecell{5.12E-09\\(5.03E-09)}&\makecell{\textbf{0}\\(N/A)}&\makecell{\textbf{0}\\(0)}\\
+$f_{3}$&\makecell{Ave\\(std)}&\makecell{\textbf{0}\\(0)}&\makecell{\textbf{0}\\(0)}&\makecell{\textbf{0}\\(0)}&\makecell{\textbf{0}\\(0)}&\makecell{4.05E-05\\(N/A)}&\makecell{\textbf{0}\\(0)}\\
+$f_{4}$&\makecell{Ave\\(std)}&\makecell{26.2846\\(0.70208)}&\makecell{0.085\\(0.0802)}&\makecell{26.9571\\(0.6047)}&\makecell{28.616\\(5.85E-02)}&\makecell{6.86\\(N/A)}&\makecell{\textbf{2.81E-02}\\(3.09E-03)}\\
+$f_{5}$&\makecell{Ave\\(std)}&\makecell{3.24E-18\\(1.46E-17)}&\makecell{\textbf{0}\\(0)}&\makecell{\textbf{0}\\(0)}&\makecell{\textbf{0}\\(0)}&\makecell{\textbf{0}\\(N/A)}&\makecell{\textbf{0}\\(0)}\\
+$f_{6}$&\makecell{Ave\\(std)}&\makecell{-5710.2323\\(1259.6292)}&\makecell{\textbf{-12569.46}\\(0.0184)}&\makecell{-6952.8236\\(1583.498)}&\makecell{-2520.0731\\(66.7175)}&\makecell{-4.06E+03\\(N/A)}&\makecell{-12450.2777\\(11.4327)}\\
+$f_{7}$&\makecell{Ave\\(std)}&\makecell{0.73146\\(2.0617)}&\makecell{\textbf{0}\\(0)}&\makecell{\textbf{0}\\(0)}&\makecell{1.34E-04\\(4.29E-05)}&\makecell{\textbf{0}\\(N/A)}&\makecell{\textbf{0}\\(0)}\\
+$f_{8}$&\makecell{Ave\\(std)}&\makecell{1.18E-14\\(3.14E-15)}&\makecell{\textbf{0}\\(0)}&\makecell{\textbf{0}\\(0)}&\makecell{0.866E-03\\(1.12E-03)}&\makecell{4.44E-16\\(N/A)}&\makecell{\textbf{0}\\(0)}\\
+$f_{9}$&\makecell{Ave\\(std)}&\makecell{2.04E-03\\5.01E-03}&\makecell{\textbf{0}\\(0)}&\makecell{\textbf{0}\\(0)}&\makecell{\textbf{0}\\(0)}&\makecell{\textbf{0}\\(N/A)}&\makecell{\textbf{0}\\(0)}\\
+$f_{10}$&\makecell{Ave\\(std)}&\makecell{-1.0316\\(1.51E-09)}&\makecell{\textbf{-1.0316}\\(2.87E-09)}&\makecell{\textbf{-1.0316}\\(4.676E-05)}&\makecell{\textbf{-1.0316}\\(6.69E-06)}&\makecell{\textbf{-1.0316}\\(N/A)}&\makecell{\textbf{-1.0316}\\(1.26E-10)}\\
+$f_{11}$&\makecell{Ave\\(std)}&\makecell{\textbf{-450}\\(6.97E-06)}&\makecell{\textbf{-450}\\(1.01E-06)}&\makecell{-449.9999\\(6.0387E-05)}&\makecell{-449.5921\\(6.09E-02)}&\makecell{\textbf{-4.50E+02}\\(N/A)}&\makecell{\textbf{-450}\\(1.13E-06)}\\
+$f_{12}$&\makecell{Ave\\(std)}&\makecell{\textbf{-450}\\(5.34E-06)}&\makecell{\textbf{-450}\\(5.2502E-07)}&\makecell{-449.9999\\(0.00014)}&\makecell{-449.4666\\(8.11E-02)}&\makecell{5.99E+02\\(N/A)}&\makecell{\textbf{-450}\\(4.39E-06)}\\
+$f_{13}$&\makecell{Ave\\(std)}&\makecell{-378.5162\\(16.1641)}&\makecell{\textbf{-390}\\(2.1345E-06)}&\makecell{-385.0514\\(12.8393)}&\makecell{-359.2712\\(2.841)}&\makecell{7.77E+02\\(N/A)}&\makecell{-389.9996\\(5.46E-04)}\\
+$f_{14}$&\makecell{Ave\\(std)}&\makecell{-329.9337\\(0.25243)}&\makecell{\textbf{-330}\\(2.6766E-06)}&\makecell{\textbf{-330}\\(5.411E-05)}&\makecell{-329.9505\\(8.55E-03)}&\makecell{-3.29E+02\\(N/A)}&\makecell{\textbf{-330}\\(1.11E-06)}\\
+$f_{15}$&\makecell{Ave\\(std)}&\makecell{-129.994\\(8.49E-02)}&\makecell{-129.9987\\(0.0034)}&\makecell{\textbf{-130}\\(9.5773E-12)}&\makecell{-129.9754\\(5.61E-03)}&\makecell{-1.29E+02\\(N/A)}&\makecell{-129.9974\\(5.77E-03)}\\
+\bottomrule %[2pt]
+\end{tabular}
+\end{table}
+
+
+\subsection{Comparison on 10 benchmark functions of CEC2019}
+\label{4.3}
+In order to facilitate the performance comparison with the
+improved methods of the latest GWO algorithm, the single objective optimization
+test benchmark function in CEC2019 adopted by LMWOAGWO algorithm is also selected
+as the benchmark function set for comparing the performance of each optimization
+algorithm. The algorithm used for comparison is the same as before, and the
+population size is still set to 50, the recursion number is 1000, and the data
+dimension is unified to 30. Each algorithm is independently repeated 50 times on
+each function, and its average and variance are counted. The results are listed
+in Table 5. It can be seen from Table 5 that EISMA has obtained the optimal
+solution in 7 of the 10 benchmark functions. However, The results obtained by the proposed algorithm are not significantly different from those obtained by EISMA, especially from a practical point of view. Compared with CMWGWO algorithm, the results of the proposed algorithm are better in 9 of the 10 benchmark functions,
+and the results of our algorithm are also better than TLGWO on these 10
+functions. Compared with LMWOAGWO algorithm, the proposed algorithm is performs on
+7 functions, and the average fitness of LMWOAGWO on $f_1$ function is more than
+${10}^4$ times that of the proposed algorithm, indicating that The proposed improvement measures are very suitable for GWO.
+
+\begin{table}[th]
+\centering
+\caption{Comparison of running results on 10 benchmark function sets in CEC2019.}\label{table:5}
+\begin{tabular}{cccccccc}% 其中，tabular是表格内容的环境；c 表示centering，即文本格式居中；c的个数代表列的个数
+\toprule %[2pt]设置线宽
+Function&&GWO&EISMA&CMWGWO&TLGWO&LMWOAGWO&Our\\ % 换行
+\midrule %[2pt]
+$f_{1}$&\makecell{Ave\\(std)}&\makecell{9932.3821\\(7540.9519)}&\makecell{\textbf{1}\\(0)}&\makecell{\textbf{1}\\(0)}&\makecell{\textbf{1}\\(0)}&\makecell{4.60E+04\\(7.19E+03)}&\makecell{\textbf{1}\\(9.34E-15)}\\
+$f_{2}$&\makecell{Ave\\(std)}&\makecell{253.2205\\(21.7674)}&\makecell{4.9174\\(0.0279)}&\makecell{4.6591\\(0.05225)}&\makecell{4.9573\\(2.35E-02)}&\makecell{17.354\\(0.014)}&\makecell{\textbf{4.3177}\\(0.028573)}\\
+$f_{3}$&\makecell{Ave\\(std)}&\makecell{2.4153\\(0.23005)}&\makecell{\textbf{2.012}\\(0.20536)}&\makecell{5.6013\\(0.14955)}&\makecell{6.5156\\(0.13779)}&\makecell{12.702\\(4.03E-07)}&\makecell{3.6751\\(0.18646)}\\
+$f_{4}$&\makecell{Ave\\(std)}&\makecell{15.5776\\(1.1126)}&\makecell{\textbf{11.5934}\\(0.52911)}&\makecell{23.4209\\(1.945)}&\makecell{64.1722\\(1.2791)}&\makecell{57.726\\(10.991)}&\makecell{14.9788\\(0.95186)}\\
+$f_{5}$&\makecell{Ave\\(std)}&\makecell{1.6135\\(0.084049)}&\makecell{\textbf{1.1471}\\(0.01068)}&\makecell{1.917\\(0.0077374)}&\makecell{16.7454\\(1.2994)}&\makecell{1.187\\(0.087)}&\makecell{1.6449\\(0.093216)}\\
+$f_{6}$&\makecell{Ave\\(std)}&\makecell{2.4578\\(0.14473)}&\makecell{3.3948\\(0.029763)}&\makecell{2.3051\\(0.13643)}&\makecell{7.2895\\(0.15141)}&\makecell{6.255\\(2.063)}&\makecell{\textbf{2.2332}\\(0.13705)}\\
+$f_{7}$&\makecell{Ave\\(std)}&\makecell{646.148\\(42.2273)}&\makecell{381.9556\\(26.7748)}&\makecell{954.49\\(64.769)}&\makecell{1769.2119\\(39.0005)}&\makecell{\textbf{202.898}\\(128.763)}&\makecell{645.3191\\(19.2943)}\\
+$f_{8}$&\makecell{Ave\\(std)}&\makecell{3.6179\\(0.077472)}&\makecell{\textbf{3.3485}\\(0.05451)}&\makecell{3.6569\\(0.066094)}&\makecell{4.9401\\(0.040767)}&\makecell{4.991\\(0.733)}&\makecell{3.485\\(0.077868)}\\
+$f_{9}$&\makecell{Ave\\(std)}&\makecell{1.1579\\(0.0068281)}&\makecell{\textbf{1.1215}\\(0.004166)}&\makecell{1.2201\\(0.010121)}&\makecell{1.6215\\(0.040381)}&\makecell{3.208\\(0.453)}&\makecell{1.1577\\(0.010406)}\\
+$f_{10}$&\makecell{Ave\\(std)}&\makecell{20.9886\\(0.46017)}&\makecell{\textbf{17.4703}\\(1.0806)}&\makecell{19.686\\(0.70965)}&\makecell{21.3389\\(0.01192)}&\makecell{19.781\\(3.320)}&\makecell{20.9752\\(0.1872)}\\
+\bottomrule %[2pt]
+\end{tabular}
+\end{table}
+
+\subsection{Comparison of 22 real application constraint optimization problems}
+\label{4.4}
+To facilitate comparison and alignment with the
+benchmarks used in the literature [44], we cite the 22
+constraint optimization problems selected from "CEC2020 Real World Single
+Objective Constraint Optimization Competition" in literature [44]. In order to
+facilitate subsequent reference and comparison of algorithm results, these 22
+questions are also listed in Table 6. In the experiment, the total population number
+is still set to 50, the recursion number to 1000, each algorithm is independently
+repeated 30 times on each function. The local search radius and random search
+dimension are set as before. Assuming that the default tolerance for equality constraints is 1.0E-4, consistent with the competition setting.
+Considering the constraint conditions in constraint optimization, we make new
+adjustments to population initialization and transboundary processing in the
+proposed algorithm.
+
+\begin{table}[th]
+\centering
+\caption{22 Real-world constrained optimization problem[44].}\label{table:6}
+\begin{tabular}{clcc}% 其中，tabular是表格内容的环境；c 表示centering，即文本格式居中；c的个数代表列的个数
+\toprule %[2pt]设置线宽
+Problem No&Problem Name&Optimism value $f(x^*)$\\ % 换行
+\midrule %[2pt]
+RW01 &Process synthesis problem &2\\
+RW02 &Process synthesis and design problem &2.557654574\\
+RW03 &Process flow sheeting problem &1.076543083\\
+RW04 &Process design Problem &26887\\
+RW05 &Multi-product batch plant &53638.94272\\
+RW06 &Weight Minimization of a Speed Reducer &2994.424466\\
+RW07 &Optimal Design of Industrial refrigeration System &0.032213001\\
+RW08 &Tension/compression spring design (case 1) &0.012665233\\
+RW09 &Pressure vessel design &5885.332774\\
+RW10 &Welded beam design &1.670217726\\
+RW11 &Three-bar truss design problem &263.8958434\\
+RW12 &Multiple disk clutch brake design problem &0.235242458\\
+RW13 &Planetary gear train design optimization problem &0.525768707\\
+RW14 &Step-cone pulley problem &16.06986873\\
+RW15 &Hydro-static thrust bearing design problem &1625.442809\\
+RW16 &10-bar truss design &524.4507607\\
+RW17 &Rolling element bearing &14614.13572\\
+RW18 &Gas Transmission Compressor Design (GTCD) &2964895.417\\
+RW19 &Tension/compression spring design (case 2) &2.613884058\\
+RW20 &Gear train design Problem &0\\
+RW21 &Himmelblau’s Function &-30665.53867\\
+RW22&Topology Optimization&2.639346497\\
+\bottomrule %[2pt]
+\end{tabular}
+\end{table}
+
+\subsubsection{Initial population generation}
+\label{4.4.1}
+Considering the difference between constrained optimization
+and unconstrained optimization, a new initial population generation method is proposed. The method can satisfies the constraint optimization requirements,
+ensures that each individual of the population meets the constraint requirements
+before the optimization solution, and also considers that the optimal solution
+may appear at the boundary of the search domain. The specific generation idea is
+as follows: Firstly, the population is randomly generated according to the normal
+population initialization method, and then detect whether there are individuals meeting the
+constraint requirements in the generated population. If it exists,
+the population individuals meeting the constraint requirements are saved,
+then check whether the number of populations meeting the requirements reaches the set value, and the initialization ends when it reaches the set value. Otherwise,
+new populations are randomly generated and the constraint satisfaction of the
+generated population individuals is tested. If there are no individuals in the
+generated population that meet the constraint requirements, turn to
+generating individuals that may be located at the boundary of the search domain.
+Individuals at the boundaries of the search domain are divided into three
+categories: mixed individuals with upper and lower bounds, individuals with only
+upper bounds, and individuals with only lower bounds. Mixed population individual
+generation method: The population is generated randomly, and then some
+individuals are randomly selected to produce mixed boundary population, and the
+rest are used to produce unilateral individuals. Some dimensions are randomly
+selected from the ones used to generate mixed population individuals to assign
+the upper bound, and then some dimensions are randomly selected from the
+remaining dimensions to assign the lower bound. After the mixed boundary
+population is generated, it is randomly determined whether other population
+individuals are used to generate upper boundary population individuals or lower
+boundary population individuals. By randomly selecting some dimensions from the
+individual dimension and assigning corresponding boundaries to the search domain,both the upper boundary individual and the lower boundary individual are generated.
+The specific description is given by the pseudo-code in algorithm 3.
+
+\textbf{Algorithm 3}. An initial population generation method with
+boundary that satisfies the constraint conditions.
+
+Input: population size $N$, Upper bound $ub$ and lower bound $lb$, Data
+dimension $Dim$, Problem No. $f\_num$, The default tolerance of the equation
+constrains $\epsilon{}$.
+
+Output: Initial population.
+
+Let $tnum=0$.
+
+Execute the following loop when $tnum<N$:
+
+\hspace{15pt}{(1) Randomly generate a set of individuals $xt$ of size $N$, Then
+calculate the fitness $f$, the inequality constraint equation value $g$ and the
+equality constraint equation value $h$ for each individual.}
+
+\hspace{15pt}{(2) Count the number of individuals meeting the constraint conditions
+$tn$.}
+
+\hspace{15pt}{(3) If $tn<1$, then use the following procedure to generate an individual at the boundary.}
+
+\hspace{15pt}\hspace{15pt}(3.1) {Randomly generate the individual index set $ptp$ for generating
+mixed boundaries, and the single boundary individual index set $spp$;}
+
+\hspace{15pt}\hspace{15pt}(3.2) {Randomly generate the dimension sets that reach the upper and lower
+boundaries $ub0$ and $lb0$;}
+
+\hspace{15pt}\hspace{15pt}(3.3) Let $xt\left(ptp,ub0\right)=ub(ub0)$,$\
+xt\left(ptp,lb0\right)=lb(lb0)$;
+
+\hspace{15pt}\hspace{15pt}(3.4) If $rand>0.5$, then
+
+\hspace{15pt}\hspace{15pt}\hspace{15pt}\hspace{15pt} Randomly generated
+the upper boundary dimension set $ub0$.
+
+\hspace{15pt}
+\hspace{15pt}\hspace{15pt}\hspace{15pt}$xt\left(spp,ub0\right)=ub(ub0)$.
+
+\hspace{15pt}\hspace{15pt}\hspace{15pt} else
+
+\hspace{15pt}\hspace{15pt}\hspace{15pt}\hspace{15pt} Randomly generated
+the lower boundary dimension set $lb0$.
+
+\hspace{15pt}
+\hspace{15pt}\hspace{15pt}\hspace{15pt}$xt\left(spp,lb0\right)=lb(lb0)$.
+
+\hspace{15pt}\hspace{15pt}(3.5) Calculate the fitness $f$, the value of the inequality constraint
+equation $g$ and the value of the equality constraint equation $h$ of the
+individual set $xt$.
+
+\hspace{15pt}\hspace{15pt}(3.6) Count the number of individuals meeting
+the constraint conditions $tn$.
+
+\hspace{15pt}(4) If $tn>0$
+
+\hspace{15pt}\hspace{15pt}(4.1)The individuals meeting the constraint conditions are selected and
+sorted according to the ascending order of fitness.
+
+\hspace{15pt}\hspace{15pt}(4.2) The number of individuals that can be selected as a population is
+calculated using the following formula:
+
+\hspace{15pt} $gtn=min(N-tnum,tn)$.
+
+\hspace{15pt}\hspace{15pt}(4.3) The first $gtn$ individuals meeting the constraint conditions were
+selected to join the population.
+
+\hspace{15pt}\hspace{15pt}(4.4) $tnum=tnum+gtn$.
+
+\hspace{15pt}{(5)Output initial population}.
+
+\subsubsection{Transboundary detection and processing}
+\label{4.4.2}
+In constraint optimization, in addition to detecting
+whether the newly generated individuals are beyond the boundary of the search domain,
+it is also necessary to check whether they meet the constraint requirements. The
+general transboundary processing method that only intercepts the transboundary
+dimension as the boundary is obviously unable to meet the constraint optimization
+requirements. Therefore, this paper proposes a new transboundary treatment
+method, which focuses on ensuring that the optimal movement direction of each
+individual in the population remains unchanged during the solution process. For
+individual $x$ in the population, assume that the optimized new position
+coordinate is $x1$. Considering that each individual is guaranteed to meet the
+constraints when the population is initialized. Therefore, we can search
+gradually from $x1$ to $x$ along the line of $x$ and $x1$ until there is a point that
+satisfies the constraints, and select that point as the new optimized position of
+individual $x$. The specific calculation process is shown in algorithm 4.
+
+
+\textbf{Algorithm 4}. Transboundary processing.
+
+Input: Individual $x$ and its updated position $x1$, upper bound $ub$ and
+lower bound $lb$.
+
+Output: New coordinate value.
+
+(1) The dimension value of $x1$ that exceeds the boundary of the search
+domain is taken as the boundary value.
+
+(2) Let $dx=x1-x;t=0;tx=x1.$
+
+(3) If $tx$ does not satisfy the constraint, the following procedure is
+repeated:
+
+\hspace{15pt} (3.1)$\ tx=x+\frac{1}{e^t}dx.$
+
+\hspace{15pt} (3.2) $t=t+1.$
+
+(4) Output $tx$.
+
+In the specific application, in order to ensure that the
+number of cycles in algorithm 4 is not excessive, the number of
+loops can be limited by $t$, If the constraint is still not satisfied after the set number of loops $tx$,let the sequence exit,$tx=x$.
+
+\subsubsection{Comparison and analysis}
+\label{4.4.3}
+In order to facilitate comparison, we directly cite the experimental
+results of literature[44] and attach the experimental results of the algorithm
+proposed in this paper to the last column of the original table, forming Table 7.
+Considering that the process of constraint optimization requires the processing of constraint violation terms, the relevant experimental data are not provided in the literature of the algorithm EISMA and CMWGWO, so they are not involved in the comparison here.
+It can be seen from the data in the table that in 13 of the 22 practical
+problems, the proposed algorithm has obtained the optimal solution. It shows that
+the proposed algorithm has a strong competition in solving practical constrained
+optimization problems, and in many problems our algorithm reaches or approximates to
+the ideal optimal solution. The reasons can be summarized into three points:
+First, the algorithm considers the influence of global optimization and local
+optimization on the optimization process; Secondly, The first-element dominance can greatly improve the efficiency of global and local information integration. Third,each individual in the
+generated initial population satisfies the constraint requirements, which can
+alleviate the instability caused by the deviation from processing that
+the constraint violation in the subsequent optimization process. Finally, the new
+transboundary processing strategy guarantees the optimal direction
+under the premise of satisfying the constraint requirements.
+
+
+\begin{table}
+\centering
+\caption{Comparison of 22 real application optimization problems in CEC2020.}\label{table:7}
+\begin{tabular}{cccccccc}% 其中，tabular是表格内容的环境；c 表示centering，即文本格式居中；c的个数代表列的个数
+\toprule %[2pt]设置线宽
+Function&&iLSHADE$\epsilon$&sCMAgES&COLSHADE&EnMODE&LMWOAGWO&Our\\ %换行
+\midrule %[2pt]
+RW01&\makecell{Ave\\(std)}&\makecell{\textbf{2.00E + 00} \\(0.00E + 00) }&\makecell{1.99E + 00 \\(1.52E - 01) }&\makecell{\textbf{2.00E + 00} \\(0.00E + 00) }&\makecell{\textbf{2.00E + 00} \\(0.00E + 00)}&\makecell{\textbf{2.00E + 00} \\(1.30E - 07) }&\makecell{\textbf{2}\\(0)}\\
+RW02&\makecell{Ave\\(std)}&\makecell{2.56E + 00 \\(1.46E - 05) }&\makecell{2.55E + 00 \\(2.70E - 01) }&\makecell{2.56E + 00 \\(0.00E + 00) }&\makecell{2.56E + 00 \\(1.36E - 15)}&\makecell{2.56E + 00 \\(2.17E - 05) }&\makecell{\textbf{2.5577}\\(8.59E - 08)}\\
+RW03&\makecell{Ave\\(std)}&\makecell{1.22E + 00 \\(6.48E - 02) }&\makecell{1.08E + 00 \\(3.47E - 02) }&\makecell{1.10E + 00 \\(6.36E - 02) }&\makecell{1.15E + 00 \\(8.79E - 02)}&\makecell{1.19E + 00 \\(8.53E - 02) }&\makecell{\textbf{1.0765}\\(6.53E - 08)}\\
+RW04&\makecell{Ave\\(std)}&\makecell{2.69E + 04 \\(1.11E - 11) }&\makecell{2.69E + 04 \\(1.11E - 11) }&\makecell{2.69E + 04 \\(3.64E - 12) }&\makecell{2.69E + 04 \\(1.11E - 11)}&\makecell{2.69E + 04 \\(7.50E - 03) }&\makecell{\textbf{26887.4414}\\(3.71E-03)}\\
+RW05&\makecell{Ave\\(std)}&\makecell{5.91E + 04 \\(1.85E + 03) }&\makecell{5.81E + 04 \\(1.35E + 03) }&\makecell{5.85E + 04 \\(7.28E - 12) }&\makecell{5.85E + 04 \\(8.06E - 09)}&\makecell{\textbf{5.47E + 04} \\(2.45E + 03) }&\makecell{58569.0977\\(7.1233)}\\
+RW06&\makecell{Ave\\(std)}&\makecell{\textbf{2.99E + 03} \\(4.64E - 13) }&\makecell{\textbf{2.99E + 03} \\(4.64E - 13) }&\makecell{\textbf{2.99E + 03} \\(4.55E - 13) }&\makecell{\textbf{2.99E + 03} \\(4.64E - 13)}&\makecell{3.00E + 03 \\(9.40E - 01) }&\makecell{3003.2568\\(0.6903)}\\
+RW07&\makecell{Ave\\(std)}&\makecell{3.82E-01 \\(9.67E - 01) }&\makecell{\textbf{3.22E-02} \\(2.78E - 17) }&\makecell{\textbf{3.22E-02} \\(0.00E + 00) }&\makecell{\textbf{3.22E-02} \\(3.17E - 18)}&\makecell{4.01E-02 \\(4.43E - 03) }&\makecell{0.036561\\(3.13E-04)}\\
+RW08&\makecell{Ave\\(std)}&\makecell{1.30E-02 \\(1.06E - 03) }&\makecell{1.27E-02 \\(2.16E - 04) }&\makecell{1.27E-02 \\(1.06E - 07) }&\makecell{1.27E-02 \\(2.01E - 05)}&\makecell{1.27E-02 \\(5.32E-05) }&\makecell{\textbf{0.012667}\\(8.22E-07)}\\
+RW09&\makecell{Ave\\(std)}&\makecell{8.48E + 03 \\(3.14E + 03) }&\makecell{7.38E + 03 \\(1.93E + 03) }&\makecell{\textbf{6.06E + 03} \\(8.36E + 00) }&\makecell{\textbf{6.06E + 03} \\(9.28E - 13)}&\makecell{6.58E + 03 \\(4.58E + 02) }&\makecell{6142.9897\\(3.61E+01)}\\
+RW10&\makecell{Ave\\(std)}&\makecell{\textbf{1.67E + 00} \\(7.59E - 07) }&\makecell{1.69E + 00 \\(3.95E - 02) }&\makecell{\textbf{1.67E + 00} \\(0.00E + 00) }&\makecell{\textbf{1.67E + 00} \\(0.00E + 00)}&\makecell{\textbf{1.67E + 00} \\(4.03E-04) }&\makecell{\textbf{1.6700}\\(3.10E-06)}\\
+RW11&\makecell{Ave\\(std)}&\makecell{2.64E + 02 \\(1.99E - 02) }&\makecell{2.65E + 02 \\(2.88E + 00) }&\makecell{2.64E + 02 \\(0.00E + 00) }&\makecell{2.64E + 02 \\(0.00E + 00)}&\makecell{2.64E + 02 \\(1.02E - 04) }&\makecell{\textbf{263.8959}\\(1.04E-05)}\\
+RW12&\makecell{Ave\\(std)}&\makecell{2.35E-01 \\(1.13E - 16) }&\makecell{2.35E-01 \\(1.13E - 16) }&\makecell{2.35E-01 \\(0.00E + 00) }&\makecell{2.35E-01 \\(1.13E - 16)}&\makecell{2.35E-01 \\(1.68E - 07) }&\makecell{\textbf{0.23525}\\(1.15E-06)}\\
+RW13&\makecell{Ave\\(std)}&\makecell{5.27E-01 \\(1.69E - 03) }&\makecell{6.16E-01 \\(1.98E - 01) }&\makecell{5.41E-01 \\(4.26E - 02) }&\makecell{5.27E-01 \\(1.44E - 03)}&\makecell{\textbf{5.26E-01} \\(5.60E - 04) }&\makecell{0.52716\\(3.03E-04)}\\
+RW14&\makecell{Ave\\(std)}&\makecell{1.61E + 01 \\(8.62E - 08) }&\makecell{1.61E + 01 \\(1.78E - 14) }&\makecell{1.61E + 01 \\(0.00E + 00) }&\makecell{1.61E + 01 \\(3.33E - 14)}&\makecell{1.65E + 01 \\(2.09E - 01) }&\makecell{\textbf{16.0842}\\(0.098437)}\\
+RW15&\makecell{Ave\\(std)}&\makecell{1.76E + 03 \\(1.28E + 03) }&\makecell{2.35E + 03 \\(1.41E + 03) }&\makecell{1.64E + 03 \\(1.01E + 02) }&\makecell{\textbf{1.62E + 03} \\(1.78E - 11)}&\makecell{1.83E + 03 \\(5.52E + 01) }&\makecell{1839.3224\\(1.32E+01)}\\
+RW16&\makecell{Ave\\(std)}&\makecell{5.25E + 02 \\(7.14E - 02) }&\makecell{5.30E + 02 \\(2.03E + 00) }&\makecell{\textbf{5.24E + 02} \\(0.00E + 00) }&\makecell{\textbf{5.24E + 02} \\(3.76E - 07)}&\makecell{5.29E + 02 \\(2.32E + 00) }&\makecell{530.4093\\(0.20647)}\\
+RW17&\makecell{Ave\\(std)}&\makecell{1.46E + 04 \\(9.28E - 12) }&\makecell{1.46E + 04 \\(9.28E - 12) }&\makecell{1.70E + 04 \\(0.00E + 00) }&\makecell{1.70E + 04 \\(3.71E - 12)}&\makecell{1.70E + 04 \\(9.29E + 00) }&\makecell{\textbf{14635.9492}\\(2.8878)}\\
+RW18&\makecell{Ave\\(std)}&\makecell{2.97E + 06 \\(6.57E + 02) }&\makecell{2.96E + 06 \\(1.43E - 09) }&\makecell{2.96E + 06 \\(0.00E + 00) }&\makecell{2.96E + 06 \\(1.43E - 09)}&\makecell{2.96E + 06 \\(6.15E + 00) }&\makecell{\textbf{2964906.5}\\(1.8808)}\\
+RW19&\makecell{Ave\\(std)}&\makecell{6.26E + 00 \\(6.32E + 00) }&\makecell{\textbf{2.21E + 00} \\(1.22E + 00) }&\makecell{2.66E + 00 \\(1.11E - 02) }&\makecell{2.81E + 00 \\(3.66E - 01)}&\makecell{2.71E + 00 \\(9.48E - 02) }&\makecell{2.6586\\(0)}\\
+RW20&\makecell{Ave\\(std)}&\makecell{5.56E-17 \\(1.17E - 16) }&\makecell{\textbf{0.00E + 00} \\(0.00E + 00) }&\makecell{1.88E-16 \\(3.81E - 16) }&\makecell{\textbf{0.00E + 00} \\(0.00E + 00)}&\makecell{9.53E-18 \\(1.54E - 17) }&\makecell{2.90E-13\\(1.27E-13)}\\
+RW21&\makecell{Ave\\(std)}&\makecell{-3.07E + 04 \\(3.64E - 12) }&\makecell{-3.07E+04\\(3.56E - 12) }&\makecell{-3.07E + 04\\(0.00E + 00) }&\makecell{-3.07E + 04\\(3.71E - 12)}&\makecell{-3.07E + 04 \\(3.18E-01) }&\makecell{\textbf{-30663.541}\\(2.01E-01)}\\
+RW22&\makecell{Ave\\(std)}&\makecell{2.64E + 00 \\(8.11E - 16) }&\makecell{2.65E + 00 \\(1.26E - 02) }&\makecell{2.64E + 00 \\(0.00E + 00) }&\makecell{2.64E + 00 \\(1.02E - 15)}&\makecell{2.64E + 00 \\(1.36E - 15) }&\makecell{\textbf{2.6393}\\(0)}\\
+
+\bottomrule %[2pt]
+\end{tabular}
+\end{table}
+
+
+
+
+
+
+
+\subsection{Comparative analysis of first-element advantage}
+\label{4.5}
+In order to verify the effect of using first-element
+advantage, we perform an experimental comparison between using first-element
+dominance and not using first-element dominance on 23 general test benchmark
+function sets. The experimental results are listed in Table 8. In Table 8, C-GWO
+represents classical GWO, fe-GWO (algorithm proposed in this paper) and nfe-GWO represent local information-optimized GWO with and without a first-element dominance, respectively. As can be seen from Table 8, local information optimized GWO with first-element dominance has obvious advantages. In order to clearly compare the influence of first-element dominance on the convergence rate, three function are selected as the representative from single module, multi-module and fixed
+dimension, which are respectively $f_1$, $f_8$ and $f_{14}$. The average fitness
+variation trend in the recursive process on these three functions are shown in
+Figure 3. It can be seen from Figure 3 that the first-element advantage can
+significantly accelerate algorithm convergence.
+
+\begin{table}[th]
+\centering
+\caption{Comparative of whether and or first-element advantage.}\label{table:8}
+\begin{tabular}{ccccccc}% 其中，tabular是表格内容的环境；c表示centering，即文本格式居中；c的个数代表列的个数
+\toprule %[2pt]设置线宽
+&$f_{1}$&$ f_{2}$&$ f_{3}$&$ f_{4}$&$ f_{5}$&$ f_{6}$\\ %换行
+\midrule %[2pt]
+C-GWO&\makecell{3.06E-59\\(1.27E-59)}&\makecell{2.03E-34\\(5.31E-35)}&\makecell{2.58E-15\\(1.41E-15)}&\makecell{1.43E-14\\(3.95E-15)}&\makecell{26.8896\\(0.099447)}&\makecell{0.61169\\(0.059235)}\\
+nfe-GWO&\makecell{3.9477E-296\\(0)}&\makecell{2.8679E-151\\(3.3336E-152)}&\makecell{7.1774E-96\\(7.0488E-96)}&\makecell{6.8032E-129\\(1.0304E-129)}&\makecell{26.3821\\(0.11907)}&\makecell{3.9952\\(0.18475)}\\
+fe-GWO&\makecell{\textbf{0}\\(0)}&\makecell{\textbf{4.41E-314}\\(0)}&\makecell{\textbf{6.92E-259}\\(0)}&\makecell{\textbf{0}\\(0)}&\makecell{\textbf{5.99E-02}\\(7.81E-03)}&\makecell{\textbf{1.79E-05}\\(1.03E-06)}\\
+\bottomrule %[2pt]
+&$f_{7}$&$ f_{8}$&$ f_{9}$&$ f_{10}$&$ f_{11}$&$ f_{12}$\\ % 换行
+\midrule %[2pt]
+C-GWO&\makecell{8.89E-04\\(1.03E-04)}&\makecell{-5517.6479\\(218.9043)}&\makecell{0.31209\\(0.19578)}&\makecell{1.64E-14\\(4.88E-16)}&\makecell{2.63E-03\\(1.12E-03)}&\makecell{0.38637\\(3.22E-03)}\\
+nfe-GWO&\makecell{9.2298E-05\\(1.5026E-05)}&\makecell{-5474.704\\(212.7478)}&\makecell{0\\(0)}&\makecell{6.9278E-15\\(2.9724E-16)}&\makecell{0.00041109\\(0.00040418)}&\makecell{0.21114\\(0.040277)}\\
+fe-GWO&\makecell{\textbf{3.54E-05}\\(5.12E-06)}&\makecell{\textbf{-12331.0516}\\(161.7748)}&\makecell{\textbf{0}\\(0)}&\makecell{\textbf{8.88E-16}\\(0)}&\makecell{\textbf{0}\\(0)}&\makecell{\textbf{2.69E-06}\\(1.99E-07)}\\
+\bottomrule %[2pt]
+&$f_{13}$&$ f_{14}$&$ f_{15}$&$ f_{16}$&$ f_{17}$&$ f_{18}$\\ % 换行
+\midrule %[2pt]
+C-GWO&\makecell{0.49832\\(0.035318)}&\makecell{4.9755\\(0.81268)}&\makecell{3.04E-03\\(1.24E-03)}&\makecell{-1.0316\\(6.1574E-10)}&\makecell{0.39789\\(2.41E-08)}&\makecell{3\\(1.29E-06)}\\
+nfe-GWO&\makecell{0.2072\\(0.022406)}&\makecell{4.5306\\(0.66925)}&\makecell{0.0003075\\(4.5014E-09)}&\makecell{-1.0316\\(5.2578E-10)}&\makecell{0.39789\\(1.2917E-08)}&\makecell{3\\(5.4895E-07)}\\
+fe-GWO&\makecell{\textbf{4.13E-05}\\(2.49E-06)}&\makecell{\textbf{2.0736}\\(0.53585)}&\makecell{\textbf{3.07E-04}\\(4.41E-09)}&\makecell{\textbf{-1.0316}\\(4.329E-10)}&\makecell{\textbf{0.39789}\\(9.32E-09)}&\makecell{\textbf{3}\\(2.23E-06)}\\
+\bottomrule %[2pt]
+&$f_{19}$&$ f_{20}$&$ f_{21}$&$ f_{22}$&$ f_{23}$&\\ % 换行
+\midrule %[2pt]
+C-GWO&\makecell{-3.8619\\(4.19E-04)}&\makecell{-3.22\\(2.93E-07)}&\makecell{-9.8162\\(0.2301)}&\makecell{-10.4027\\(1.72E-05)}&\makecell{-10.5362\\(1.10E-05)}& \\
+nfe-GWO&\makecell{\textbf{-3.8628}\\(6.8696E-06)}&\makecell{\textbf{-3.322}\\(4.8124E-07)}&\makecell{\textbf{-10.1531}\\(1.0303E-05)}&\makecell{\textbf{-10.4028}\\(1.2999E-05)}&\makecell{\textbf{-10.5363}\\(1.1767E-05)}& \\
+fe-GWO&\makecell{-3.8622\\(3.43E-04)}&\makecell{\textbf{-3.322}\\(7.66E-07)}&\makecell{\textbf{-10.1531}\\(1.72E-05)}&\makecell{\textbf{-10.4028}\\(1.68E-05)}&\makecell{\textbf{-10.5363}\\(1.791E-05)}& \\
+\bottomrule %[2pt]
+
+\end{tabular}
+\end{table}
+
+\begin{figure}[thbp]
+	\centering
+    \includegraphics[width=0.3\textwidth]{image/ff1.png}
+    \includegraphics[width=0.3\textwidth]{image/ff2.png}
+    \includegraphics[width=0.3\textwidth]{image/ff3.png}
+\caption{Comparison of GWO convergence between local information optimization with first element dominance and without first element dominance.}\label{fig:4}
+\end{figure}
+
+\section{Summary}
+\label{5}
+Grey Wolf algorithm attracts many researchers to study it
+because of its simplicity, high efficiency and wide application prospect. In order to solve the problem that the classical GWO algorithm focus on global information and
+ignore local information, a new method to modify GWO results by using local information is proposed. Compared with other
+methods using local information to optimize GWO algorithm, our proposed
+combination of local information and GWO search results is simpler and more
+efficient, and a special first-element dominance is used in the combination to
+greatly improve the performance of the algorithm. In the local optimization
+process, we use the random positioning method near the fixed position with
+multi-dimensional directions, which reduces the algorithm complexity and
+preserves the randomness of the positioning as much as possible. In order to
+apply GWO to constrained optimization, a hybrid
+initial population initialization method is proposed to ensure that all
+population individuals meet the constraint requirements at the beginning of the
+algorithm. A new method is used to search for solutions that meet the constraints in the update
+direction to ensure that the constraints are not violated in the solution process,
+instead of the traditional truncation and cross-processing methods. Experimental results verify the
+effectiveness of the proposed method. But what is the theoretical basis of first
+-element dominance and its adaptive range still need to be further studied.
+%\section{AUTHOR CONTRIBUTIONS}
+%Yan-Zhuang Xuan: Data curation, formal analysis, methodology, software, visualization, writing. Shi-Bin Xuan: Conceptualization,
+%funding acquisition, project administration, resources, supervision, review \& editing.
+\section{ACKNOWLEDGEMENTS}
+This work was financially supported by the National Natural
+Science Foundation of China (62062011, 61866003).
+%% The Appendices part is started with the command \appendix;
+%% appendix sections are then done as normal sections
+%% \appendix
+
+%% \section{}
+%% \label{}
+
+%% If you have bibdatabase file and want bibtex to generate the
+%% bibitems, please use
+%%
+%%  \bibliographystyle{elsarticle-harv}
+%%  \bibliography{<your bibdatabase>}
+
+%% else use the following coding to input the bibitems directly in the
+%% TeX file.
+
+\begin{thebibliography}{47}
+
+%% \bibitem[Author(year)]{label}
+%% Text of bibliographic item
+\bibitem[Minzu(2020)]{1}
+[1] Minzu, V., Serbencu, A.. Systematic Procedure for Optimal Controller Implementation Using Metaheuristic Algorithms. Intelligent Automation \& Soft Computing, no.26, pp.663-677,2020.
+\bibitem[Castillo(2022)]{2}
+[2]Castillo, O., Melin, P.. A Review of Fuzzy Metaheuristics for Optimal Design of Fuzzy Controllers in Mobile Robotics. In Complex Systems: Spanning Control and Computational Cybernetics: Applications: Dedicated to Professor Georgi M. Dimirovski on His Anniversary; Shi,P., Stefanovski, J., Kacprzyk, J., Eds.; Springer International Publishing: Cham, Switzerland, pp.59-72,2022.
+\bibitem[Razmjooy(2021)]{3}
+[3]Razmjooy, N., Ashourian, M., Foroozandeh, Z.. Metaheuristics and Optimization in Computer and Electrical Engineering, Springer Nature Switzerland AG: Cham, Switzerland,2021.
+\bibitem[Vineeth(2021)]{4}
+[4]Vineeth, P., Suresh, S.. Performance evaluation and analysis of population-based metaheuristics for denoising of biomedical images. Research on Biomedical Engineering, no.37, pp.111-133,2021.
+\bibitem[Nssibi(2023)]{5}
+[5]Nssibi, M., Manita, G., Korbaa, O.. Advances in nature-inspired metaheuristic optimization for feature selection problem: A comprehensive survey. Computer Science Review, vol.49,2023,https://doi.org/10.1016/j.cosrev.2023.100559..
+\bibitem[Aslay(2023)]{6}
+[6]Aslay, S.E., Dede, T.. Reduce the construction cost of a 7-story RC public building with metaheuristic algorithms. Architectural Engineering and Design Management, pp.1-16,2023.
+\bibitem[Amorim(2021)]{7}
+[7]Amorim, A.R., Zafalon, G.F.D., Contessoto, A.d.G., Val\^{e}ncio, C.R., Sato, L.M..  Metaheuristics for multiple sequence alignment: A systematic review. Computational Biology and Chemistry, vol.94,2021,https://doi.org/10.1016/j.compbiolchem.2021.107563.
+\bibitem[Khan(2022)]{8}
+[8]Khan, A.A., Shaikh, Z.A., Belinskaja, L., Baitenova, L., Vlasova, Y., Gerzelieva, Z., Laghari, A.A., Abro, A.A., Barykin, S.. A Block chain and Metaheuristic-Enabled Distributed Architecture for Smart Agricultural Analysis and Ledger Preservation Solution: A Collaborative Approach. Applied Sciences, vol.12,no.3,pp.1-19,2022.
+\bibitem[Mousapour(2023)]{9}
+[9]Mousapour M., M., Ostadi, A., Pourkhodabakhsh, N., Fathollahi-Fard, A.M., Soleimani, F.. Hybrid neural network-based metaheuristics for prediction of financial markets: A case study on global gold market. Journal of Computational Design and Engineering,vol.10,no.3,pp.1110-1125,2023.
+\bibitem[Goldberg(1989)]{10}
+[10]Goldberg, D. E.. Genetic Algorithms in Search Optimization and Machine learning. Addison-Wesley,1989,https://api.semanticscholar.org/CorpusID:38613589.
+\bibitem[Storn(1997)]{11}
+[11]Storn, R., Price, K.. Differential Evolution - A Simple and Efficient Heuristic for global Optimization over Continuous Spaces. Journal of Global Optimization, vol.11,no.4,pp.341-359,1997.
+\bibitem[Kennedy(2002)]{12}
+[12]Kennedy, J., Eberhart, R.. Particle Swarm Optimization in Proceedings of ICNN'95 - International Conference on Neural Networks,2002.
+\bibitem[Gandomi(2011)]{13}
+[13]Gandomi, A. H., Yang, X. S., Alavi, A. H.. Mixed variable structural optimization using Firefly Algorithm. Computers \& Structures, vol.89,no.23-24,pp.2325-2336,2011.
+\bibitem[Mirjalili(2014)]{14}
+[14]Mirjalili, S., Mirjalili, S. Lewis, A. (2014). Grey Wolf Optimizer. Advances in Engineering Software, vol.69, pp.46-61,2014.
+\bibitem[Stutzle(2004)]{15}
+[15]Stutzle, M.. Ant Colony Optimization. Bradford Company,2004.
+\bibitem[Karaboga(2009)]{16}
+[16]Karaboga, D., Akay, B.. A comparative study of Artificial Bee Colony algorithm. Applied Mathematics and Computation, vol.214,no.1,pp.108-132,2009.
+\bibitem[Wenqing(2024)]{17}
+[17] Wenqing X., Donglin Z., Rui L., Yilin Y., Changjun Z., Shi C.. An effective method for global optimization – Improved slime mould algorithm combine multiple strategies. Egyptian Informatics Journal. 25(100442),pp.1-34,2024.
+\bibitem[Mirjalili(2016)]{18}
+[18]Mirjalili, S., Lewis, A.. The Whale Optimization Algorithm. Advances in engineering software, vol.95,no.5,pp.51-67,2016.
+\bibitem[Faramarzi(2020)]{19}
+[19]Faramarzi, A., Heidarinejad, M., Mirjalili, S.,Gandomi, A. H.. Marine Predators Algorithm: A Nature-inspired Metaheuristic. Expert Systems with Applications, vol.152,2020, https://doi.org/10.1016/j.eswa.2020.113377.
+\bibitem[Mareli(2018)]{20}
+[20]Mareli, M., Twala, B.. An adaptive Cuckoo search algorithm for optimisation. Applied Computing and Informatics, vol.14,no.2,pp.107-115,2018.
+\bibitem[Hashim(2022)]{21}
+[21]Hashim, F. A., Houssein, E. H., Hussain K., Mabrouk, M. S., Al-Atabany, W.. Honey Badger Algorithm: New metaheuristic algorithm for solving optimization problems. Mathematics and Computers in Simulation, vol.192, pp.84-110,2022.
+\bibitem[Hu(2023)]{22}
+[22]Hu, G., Jing, W., Wei, G., Abbas M.. Opposition-based learning boosted orca predation algorithm with dimension learning: a case study of multi-degree reduction for NURBS curves. Journal of Computational Design and Engineering, vol.10,no.2, pp.722-757,2023.
+\bibitem[Agushaka(2023)]{23}
+[23]Agushaka, J. O., Ezugwu, A. E., Abualigah, Laith.. Gazelle optimization algorithm: a novel nature-inspired metaheuristic optimizer. Neural Computing and Applications, vol.35,no.5,pp. 4099-4131,2023.
+\bibitem[Mirjalili(2017)]{24}
+[24]Mirjalili, S., Gandomi, A. H., Mirjalili, S. Z., Saremi, S., Faris, H., Mirjalili, S. M.. Salp Swarm Algorithm: A bio-inspired optimizer for engineering design problems. Advances in Engineering Software, vol.114, pp.163–191,2017.
+\bibitem[Rao(2011)]{25}
+[25]Rao, R. V., Savsani, V. J., Vakharia, D. P.. Teaching-learning-based optimization: A novel method for constrained mechanical design optimization problems. Computer-Aided Design, vol.43,no.3,pp.303-315,2011.
+\bibitem[Atashpaz(2007)]{26}
+[26]Atashpaz,G. E., Lucas, C.. Imperialist competitive algorithm: An algorithm for optimization inspired by imperialistic competition. In 2007 IEEE Congress on Evolutionary Computation,2007.
+\bibitem[Moghdani(2017)]{27}
+[27]Moghdani, R., Salimifard, K.. Volleyball Premier League Algorithm. Applied Soft Computing, vol.64,pp.161-185,2017.
+\bibitem[Kuo(2013)]{28}
+[28]Kuo, H. C., Lin, C. H.. Cultural Evolution Algorithm for Global Optimizations and its Applications. Journal of Applied Research \& Technology, vol.11,no.4,pp.510-522,2013.
+\bibitem[Zhaolu(2024)]{29}
+[29]Zhaolu G., Hongjin L., Kangshun L.. Dual subpopulation artificial bee colony algorithm based on individual gradation. Egyptian Informatics Journal. 25(100452),pp.1-12,2024.
+\bibitem[Zhang(2015)]{30}
+[30]Zhang, S., Zhou, Y.. Grey Wolf Optimizer Based on Powell Local Optimization Method for Clustering Analysis. Discrete Dynamics in Nature and Society,pp.481360(1-17),2015,http://dx.doi.org/ 10.1155/2015/481360.
+\bibitem[Alyu(2023)]{31}
+[31]Alyu, A. B., Salau, A. O., Khan, B., Eneh, J. N.. Hybrid GWO-PSO based optimal placement and sizing of multiple PV-DG units for power loss reduction and voltage profile improvement. Scientific Reports, vol.13,2023, https://doi.org/10.1038/s41598-023-34057-3.
+\bibitem[Lu(2020)]{32}
+[32]Lu, C., Gao, L., Li, X., Hu, C., Yan, X., Gong, W.. Chaotic-based grey wolf optimizer for numerical and engineering optimization problems. Memetic Computing, vol.12,pp.371–398,2020.
+\bibitem[Mohammad(2021)]{33}
+[33]Mohammad, H. Shahraki, N., Taghian, S., Mirjalili, S.. An improved grey wolf optimizer for solving engineering problems. Expert Systems With Applications, vol.166,pp.113917(1-25),2021, https://doi.org/10.1016/j.eswa.2020.113917.
+\bibitem[Su(2023)]{34}
+[34]Su, Y., Li, Y., Xuan, S.. Prediction of complex public opinion evolution based on improved multi-objective grey wolf optimizer. Egyptian Informatics Journal vol.24,pp.149–160,2023.
+\bibitem[Li(2022)]{35}
+[35]Li, K., Li, S., Huang, Z., Zhang, M., Xu, Z.. Grey Wolf Optimization algorithm based on Cauchy-Gaussian mutation and improved search strategy. Scientific Reports, vol.12,2022, https:// doi.org/10.1038/s41598-022-23713-9.
+\bibitem[Tripathi(2018)]{36}
+[36]Tripathi, A. K., Sharma, K., Bala, M. A Novel Clustering Method Using Enhanced Grey Wolf Optimizer and Map Reduce. Big Data Research, 2018,https://doi.org/10.1016/j.bdr.2018.05.002.
+\bibitem[Paliwal(2022)]{37}
+[37]Paliwal, N., Srivastava, L., Pandit, M.. Application of grey wolf optimization algorithm for load frequency control in multi-source single area power system. Evolutionary Intelligence, vol.15, pp.563-584,2022.
+\bibitem[Song(2022)]{38}
+[38]Song, Y., Meng, X., Jiang, J.. Multi-Layer Perception model with Elastic Grey Wolf Optimization to predict student achievement. PLOS ONE，2022, https://doi.org/10.1371/journal.pone.0276943.
+\bibitem[Cui(2023)]{39}
+[39]Cui, J., Liu, T., Zhu, M., Xu, Z.. Improved team learning-based grey wolf optimizer for optimization tasks and engineering problems. The Journal of Supercomputing,vol.79,pp.10864-10914,2023.
+\bibitem[Gupta(2021)]{40}
+[40]Gupta, S., Deep, K., Moayedi, H., Foong, L. K., Assad, A.. Sine cosine grey wolf optimizer to solve engineering design problems. Engineering with Computers, vol.37,pp.3123-3149,2021.
+\bibitem[Pan(2021)]{41}
+[41]Pan, C., Si, Z., Du, X., Lv. Y. (2021). A four-step decision-making grey wolf optimization algorithm. Soft Computing, vol.25,pp.14375-14391,2021.
+\bibitem[Wang(2022)]{42}
+[42]Wang, B., Liu, L., Li, Y., Khishe, M.. Robust Grey Wolf Optimizer for Multimodal Optimizations: A Cross-Dimensional Coordination Approach. Journal of Scientific Computing vol.92,2022, https://doi.org/10.1007/s10915-022-01955-z.
+\bibitem[Shial(2023)]{43}
+[43]Shial, G., Sahoo, S., and Panigrahi, S.. An Enhanced GWO Algorithm with Improved Explorative Search Capability for Global Optimization and Data Clustering. Applied Artificial Intelligence, vol.37,no.1,2023,https://doi.org/ 10.1080/08839514.2023.2166232.
+\bibitem[Yang(2023)]{44}
+[44]Yang, Q., Liu, J., Wu, Z., He, S.. A fusion algorithm based on whale and grey wolf optimization algorithm for solving real-world optimization problems. Applied Soft Computing, vol.146,2023,https://doi.org/10.1016/j.asoc.2023.110701
+\bibitem[Kai(2024)]{45}
+[45] Kai Z.,Chuanhe T.,Yi Z.,Junyuan Y.,Zhilong Z.,Yanqiang W.. Research on Solving Flexible Job Shop Scheduling Problem Based on Improved GWO Algorithm SS-GWO. Neural Processing Letters.  pp.56:26,2024.
+\bibitem[Oluwatayomi(2024)]{46}
+[46] Oluwatayomi R. A., Afi K. F., Opeoluwa S. O., Ephraim B. A., Abdelazim G. Hussien, S. K.. Chaotic opposition learning with mirror reflection and worst individual disturbance grey wolf optimizer for continuous global numerical optimization. Scientific Reports. 14:4660,pp.1-41,2024.
+\bibitem[Powell(1978)]{47}
+[47]Abed-alguni, B.H., Paul, D.. Island-based cuckoo search with elite opposition-based learning and multiple mutation methods for solving optimization problems, Soft Computing. vol.26,no.7,pp.3293-3312,2022.
+\end{thebibliography}
+\end{document}
+
+\endinput
+%%
+%% End of file `elsarticle-template-harv.tex'.
